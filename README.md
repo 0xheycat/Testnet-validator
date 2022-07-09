@@ -11,24 +11,24 @@ welcome to Transformer testnet [Official website](https://www.tfsc.io/doc/learn/
 ## 1. To install you must following requirement above
 
 **Command-line**
-
-* `sudo apt update && sudo apt upgrade -y`
-
+```bash
+sudo apt update && sudo apt upgrade -y
+```
 * **Allow port 22**
-
-* `ufw allow 22 && ufw enable`
-
+```bash
+ufw allow 22 && ufw enable
+```
 * **Install firewall**
-
-* `apt install firewalld -y`
-
+```bash
+apt install firewalld -y
+```
 ## 2. **Download TTFSC FILE**
-
-* `mkdir testnet`
-* `cd testnet`
-* `wget https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_0.0.1_devnet`
-* `chmod +x ttfsc_0.0.1_devnet`
-
+```bash
+mkdir testnet
+cd testnet
+wget https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_0.0.1_devnet
+chmod +x ttfsc_0.0.1_devnet
+```
 **To view the automatically generated directories and files under the current directory**
 <html>
 <body>
@@ -47,14 +47,15 @@ config.json | JSON file | configuration file
 ## **Download and edit config.toml with your own IP, you will find 2 text CHANGE WITH YOUR IP** 
  
  **Remove old file and Download new json**
-
-* `cd testnet`
-* `rm -rf config.json`
-* `wget https://raw.githubusercontent.com/fatalbar/testnet-manual/main/config.json`
-
+```bash
+cd testnet
+rm -rf config.json
+wget https://raw.githubusercontent.com/fatalbar/testnet-manual/main/config.json
+```
  **Please Edit your Config with your own IP, please follow step with command**
-* `nano config.json`
-
+```bash
+nano config.json
+```
 ![Screenshot_4](https://user-images.githubusercontent.com/81378817/178102969-9f3f472c-1abc-4cfa-8f30-e94dcd7e3d62.jpg)
 
 
@@ -69,9 +70,10 @@ _NOTICE:_
 _The private key in the cert must not be lost, please backup to your pc, you can find private key directory in `root/testnet/cert/file_your_Private_Key`._
 
 ## **Run node follow this command**
-* `cd testnet`
-* `./ttfsc_0.0.1_devnet -m`
-
+```bash
+cd testnet
+./ttfsc_0.0.1_devnet -m
+```
 you will see menu 
 
 
@@ -96,5 +98,6 @@ Order | Menu item | Function
 </body>
 </html>
 
-## You have success on first STEP, WAIT for next STEP,
+## You have success on first STEP, WAIT for next STEP 
+Thank you
 
