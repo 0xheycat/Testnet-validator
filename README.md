@@ -1,4 +1,4 @@
-welcome to our Github testnet, you can contact me 
+welcome to our Github testnet,i wil update upcoming Tesnet here, you can contact me 
 * [Twitter](https://twitter.com/Fataalbar24)
 * [Telegram](https://t.me/Fatalbar)
 * [Youtube](https://www.youtube.com/channel/UCUmxy-XSu05810Q1iqaVf8g)
