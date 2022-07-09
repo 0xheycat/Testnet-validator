@@ -161,7 +161,10 @@ systemctl restart zilliqad
 
 ## 2.3 Install Wallet
 Download ektention [Keplr](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap)
+You can get faucet from [Faucet](https://app.kyve.network/#/faucet)
 
+
+Thank you
 
 
 
