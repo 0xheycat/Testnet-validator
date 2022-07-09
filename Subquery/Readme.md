@@ -8,6 +8,6 @@ SubQuery node setup for Frontier Testnet
 
 ## Install Auto
 ```bash
-wget -O subquery.sh https://raw.githubusercontent.com/fatalbar/meowbored/main/subquery.sh && chmod +x subquery.sh && ./subquery.sh
+wget -O subquery.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Subquery/subquery.sh && chmod +x subquery.sh && ./subquery.sh
 ```
 
