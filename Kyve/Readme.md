@@ -10,5 +10,5 @@ _Before installing, make sure you have enough tokens for the minimum staking, ot
 
 ## Install Automatic 
 ```bash
-wget -O kyve.sh https://api.nodes.guru/kyve.sh && chmod +x kyve.sh && ./kyve.sh
+wget -O kyve.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Kyve/kyve.sh && chmod +x kyve.sh && ./kyve.sh
 ```
