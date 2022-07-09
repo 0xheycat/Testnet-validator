@@ -1,9 +1,10 @@
 Welcome To Kyve Testnet
 
-## Official Document
+## Official KYVE Document
 
 * [Website](https://app.kyve.network/#/)
 * [Kyve Task](https://app.kyve.network/#/korellia/tasks)
+* [Github](https://github.com/KYVENetwork)
 
 _Before installing, make sure you have enough tokens for the minimum staking, otherwise your node will not work. To see the minimum staking, open the pool and go to Validators, if you don’t have enough tokens you can do other [Kyve Task](https://app.kyve.network/#/korellia/tasks)._
 
