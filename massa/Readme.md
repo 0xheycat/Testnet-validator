@@ -67,8 +67,10 @@ node_testnet_rewards_program_ownership_proof ADDRESS DISCORD_ID
 ```bash
 node_add_staking_private_keys <your private keys>
 ```
+
 Congratulations you have successfully registered your node.
 
+You can check your node status on [Telegram](https://t.me/massacheck_bot),add your address on Bot
 
 
 ## Additional Command
