@@ -82,7 +82,6 @@ chmod +x /root/massa/massa-node/run.sh
 systemctl daemon-reload 
 systemctl enable massad 
 systemctl restart massad
-systemctl status massad
 
 
 
