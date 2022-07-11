@@ -76,10 +76,6 @@ wallet_info
 ```bash
 wallet_generate_secret_key
 ```
-* Restore Wallet from previous wallet if you already have(change `your_key` with your key)
-```bash
-wallet_add_private_keys <your_key>
-```
 * Backup your Node
 ```bash
 echo $HOME /massa/massa-node/config/node_privkey.key
