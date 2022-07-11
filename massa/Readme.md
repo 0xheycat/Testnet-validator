@@ -15,10 +15,10 @@ wget -O massa.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/
 
 * Add custom port setup the firewall on your computer to allow incoming TCP connections on ports 31244 and 31245
 ```bash
-sudo ufw enable
 ufw allow 31244 && ufw allow 31245
 sudo ufw allow 31244/tcp
 sudo ufw allow 31245/tcp
+sudo ufw enable
 ```
 * Check your firewall status
 ```bash
