@@ -14,20 +14,20 @@ sleep 1
 
 # set vars
 if [ ! $IP_SERVER ]; then
-read -p "Input IP Server Kamu: " IP_SERVER
+read -p "Input Your IP: " IP_SERVER
 echo 'export IP_SERVER='\"${IP_SERVER}\" >> $HOME/.bash_profile
-read -p "Input Password Kamu: " PASSWORD
+read -p "Input Your Password: " PASSWORD
 echo 'export PASSWORD='\"${PASSWORD}\" >> $HOME/.bash_profile
 fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 . $HOME/.bash_profile
 
-echo -e "IP Server Kamu: \e[1m\e[32m${IP_SERVER}\e[0m"
-echo -e "Password Kamu: \e[1m\e[32m${PASSWORD}\e[0m"
+echo -e "Your IP Server: \e[1m\e[32m${IP_SERVER}\e[0m"
+echo -e "Your Password : \e[1m\e[32m${PASSWORD}\e[0m"
 echo '================================================='
 sleep 1
 
-# delete folder
+# delete old folder
 rm -rf massa
 rm -rf massa-test.sh
 rm -rf massa-testnet.sh
@@ -42,12 +42,12 @@ sudo apt-get install screen
 
 echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 
-# packages
+# insall packages
 sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
 sudo apt-get install librocksdb-dev build-essential
 
 echo -e "\e[1m\e[32m3. Downloading and building massa binary... \e[0m" && sleep 1
-# download binary dan ekstrak
+# downloading binary and extracting
 cd $HOME
 wget https://github.com/massalabs/massa/releases/download/TEST.12.0/massa_TEST.12.0_release_linux.tar.gz
 tar xvzf massa_TEST.12.0_release_linux.tar.gz
@@ -55,7 +55,7 @@ tar xvzf massa_TEST.12.0_release_linux.tar.gz
 # wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/config.toml
 cd $HOME
 cd massa/massa-node/config
-wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/config.toml
+wget https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/config.toml
 sed -i -e "s/^routable_ip *=.*/routable_ip = \"$IP_SERVER\"/" $HOME/massa/massa-node/config/config.toml
 
 sudo tee /root/massa/massa-node/run.sh > /dev/null <<EOF
@@ -88,13 +88,13 @@ systemctl status massad
 
 #!/bin/bash
 if [ ! $PASSWORD ]; then
-read -p "Input Password Client Kamu: " PASSWORD
+read -p "Input Your Password Client: " PASSWORD
 echo 'export PASSWORD='\"${PASSWORD}\" >> $HOME/.bash_profile
 fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 . $HOME/.bash_profile
 
-echo -e "Password Client Kamu: \e[1m\e[32m${PASSWORD}\e[0m"
+echo -e "Input Your Password Client: \e[1m\e[32m${PASSWORD}\e[0m"
 echo '================================================='
 sleep 1
 # Generate New Wallet 
