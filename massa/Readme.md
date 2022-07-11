@@ -69,6 +69,8 @@ node_add_staking_private_keys <your private keys>
 ```
 Congratulations you have successfully registered your node.
 
+
+
 ## Additional Command
 * Remove old wallet 
 ```bash
