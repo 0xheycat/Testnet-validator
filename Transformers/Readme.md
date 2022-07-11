@@ -14,9 +14,16 @@ welcome to Transformer testnet [Official website](https://www.tfsc.io/doc/learn/
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-* **Allow port 22**
+* **Allow port 22 and 41516**
 ```bash
-ufw allow 22 && ufw enable
+ufw allow 22
+ufw allow 41516
+sudo ufw allow 41516/tcp
+sudo ufw enable
+```
+* Restart your firewall
+```bash
+systemctl restart firewalld
 ```
 * **Install firewall**
 ```bash
@@ -74,9 +81,19 @@ _The private key in the cert must not be lost, please backup to your pc, you can
 cd testnet
 ./ttfsc_0.0.1_devnet -m
 ```
-you will see menu 
-
-
+you will see menu, `CTRL+A+D` to make service on background you need install screen
+```bash
+apt install screen
+```
+then Re Run your NODE
+```bash
+screen -S tfsc
+./ttfsc_0.0.1_devnet -m
+```
+To back your screen
+```bash
+screen -Rd tfsc
+```
 ![Screenshot_7](https://user-images.githubusercontent.com/81378817/178104003-cd8e4726-9f0d-44f7-99f1-ed2c5fc2038a.jpg)
 
 <html>
