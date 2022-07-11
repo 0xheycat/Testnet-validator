@@ -105,4 +105,4 @@ cd $HOME/massa/massa-client && generate_address=$(./massa-client wallet_generate
 
 clear
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
