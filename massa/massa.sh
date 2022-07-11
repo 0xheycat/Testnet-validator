@@ -95,7 +95,6 @@ echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 
 echo -e "Input Your Password Client: \e[1m\e[32m${PASSWORD}\e[0m"
 echo '================================================='
-sleep 1
 # Generate New Wallet 
 
 chmod +x $HOME/massa/massa-client/massa-client
