@@ -83,8 +83,6 @@ systemctl daemon-reload
 systemctl enable massad 
 systemctl restart massad
 
-
-
 #!/bin/bash
 if [ ! $PASSWORD ]; then
 read -p "Input Your Password Client: " PASSWORD
@@ -101,6 +99,3 @@ chmod +x $HOME/massa/massa-client/massa-client
 cd $HOME/massa/massa-client && wallet_pss=$(./massa-client -p $PASSWORD | grep Address )
 cd $HOME/massa/massa-client && generate_address=$(./massa-client wallet_generate_secret_key - p $PASSWORD | grep Address | awk '{ print $2 }')
 
-clear
-cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
