@@ -54,8 +54,9 @@ node_testnet_rewards_program_ownership_proof ADDRESS DISCORD_ID
 ```
 * Copy the code given into the discord bot and paste your IP Address on bot, 
 * register Node staking (change `<your private keys>` with your private keys)
+```bash
 node_add_staking_private_keys <your private keys>
-
+```
 Congratulations you have successfully registered your node.
 
 ## Additional Command
