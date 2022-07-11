@@ -12,7 +12,10 @@
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
-
+* Check Massa Log ,`CTRL+C` to close
+```bash
+sudo tail -f /root/massa/massa-node/logs.txt
+```
 * Add custom port setup the firewall on your computer to allow incoming TCP connections on ports 31244 and 31245
 ```bash
 ufw allow 31244 && ufw allow 31245
@@ -80,10 +83,6 @@ wallet_generate_secret_key
 ```bash
 echo $HOME /massa/massa-node/config/node_privkey.key
 echo $HOME /massa/massa-client/wallet.dat
-```
-* Check Massa Log
-```bash
-sudo journalctl -f -n 100 -u massad
 ```
 * Check Massa Log
 ```bash
