@@ -48,7 +48,7 @@ wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/ma
 
 * change `ADDRESS` and `DISCORD_ID` with your own ID (example `node_testnet_rewards_program_ownership_proof A1J9dqvxxxx 998476373xxxx` ) To find your Discord ID you can following this step
 ![Screenshot_9](https://user-images.githubusercontent.com/81378817/178303191-5074221e-7f90-4934-960a-48a0f1873e75.jpg)
-* After you got your address and discord ID, you can Register testnet registration
+* After you got your address and discord ID, you can Register testnet registration Reward
 ```bash
 node_testnet_rewards_program_ownership_proof ADDRESS DISCORD_ID
 ```
@@ -88,6 +88,10 @@ echo $HOME /massa/massa-client/wallet.dat
 * Check Massa Log
 ```bash
 sudo journalctl -f -n 100 -u massad
+```
+* Check Massa Log
+```bash
+sudo tail -f /root/massa/massa-node/logs.txt
 ```
 * Get status massa, You can close with `CTRL+C`
 ```bash
