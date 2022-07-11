@@ -92,9 +92,6 @@ sudo journalctl -f -n 100 -u massad
 ```bash
 systemctl status massad
 ```
-```bash
-systemctl status massad
-```
 * Restart Massa
 ```bash
 systemctl restart massad
