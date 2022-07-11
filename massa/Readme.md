@@ -55,7 +55,14 @@ wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/ma
 ```bash
 node_testnet_rewards_program_ownership_proof ADDRESS DISCORD_ID
 ```
-* Copy the code given into the discord bot and paste your IP Address on bot, 
+* Copy the code given into the discord bot
+![Screenshot_14](https://user-images.githubusercontent.com/81378817/178324521-fa173df7-20c3-4e3d-8ed5-0ee4270c75fa.jpg)
+* You will see like this
+ ![Screenshot_15](https://user-images.githubusercontent.com/81378817/178324934-9e357e00-2eb8-448b-a0da-20efa8a99745.jpg)
+
+* Now you can paste your IP Address on massa bot on Discord
+![Screenshot_13](https://user-images.githubusercontent.com/81378817/178324194-653171e9-3bb5-459a-b49a-c8682ea6d110.jpg)
+
 * register Node staking (change `<your private keys>` with your private keys)
 ```bash
 node_add_staking_private_keys <your private keys>
