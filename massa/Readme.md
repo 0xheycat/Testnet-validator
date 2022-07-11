@@ -107,3 +107,5 @@ sudo rm $(which massa) -rf
 sudo rm $HOME/.massa* -rf
 sudo rm $HOME/massa -rf
 ```
+
+## Thank you massacaptain, source from massacaptain [Source](https://medium.com/@massacaptain/tutorial-running-node-massa-dengan-satu-command-line-32a9bc472b46)
