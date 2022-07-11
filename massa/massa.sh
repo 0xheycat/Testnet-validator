@@ -42,7 +42,7 @@ sudo apt-get install screen
 
 echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 
-# insall packages
+# install packages
 sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
 sudo apt-get install librocksdb-dev build-essential
 
