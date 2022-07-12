@@ -65,7 +65,7 @@ node_testnet_rewards_program_ownership_proof ADDRESS DISCORD_ID
 
 * register Node staking (change `<your private keys>` with your private keys)
 ```bash
-node_add_staking_private_keys <your private keys>
+node_add_staking_secret_keys <your private keys>
 ```
 
 Congratulations you have successfully registered your node.
