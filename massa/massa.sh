@@ -99,3 +99,5 @@ chmod +x $HOME/massa/massa-client/massa-client
 cd $HOME/massa/massa-client && wallet_pss=$(./massa-client -p $PASSWORD | grep Address )
 cd $HOME/massa/massa-client && generate_address=$(./massa-client wallet_generate_secret_key - p $PASSWORD | grep Address | awk '{ print $2 }')
 
+echo '=============== INSTALL FINISHED ==================='
+echo -e 'To check logs: \e[1m\e[32msudo tail -f /root/massa/massa-node/logs.txt\e[0m'
