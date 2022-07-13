@@ -99,7 +99,7 @@ wallet_info
 ```bash
 wallet_generate_secret_key
 ```
-* Backup your Node
+* Backup your Node,please save your DATA on safe placee
 ```bash
 echo $HOME /massa/massa-node/config/node_privkey.key
 echo $HOME /massa/massa-client/wallet.dat
