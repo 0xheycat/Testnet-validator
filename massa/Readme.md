@@ -12,6 +12,15 @@
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
+* install screen and make your log active on Background, `CTRL+A+D` to close without terminating proses
+```bash
+install apt screen
+screen -dmS massa bash -c 'sudo tail -f /root/massa/massa-node/logs.txt'
+```
+* To back your massa screen
+```bash
+screen -x massa
+```
 * Check Massa Log ,`CTRL+C` to close
 ```bash
 sudo tail -f /root/massa/massa-node/logs.txt
