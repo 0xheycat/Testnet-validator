@@ -8,7 +8,7 @@ welcome to Transformer testnet [Official website](https://www.tfsc.io/doc/learn/
 ## Software requirements：
 * Operation system：Run on CentOS 7、ubuntu-22.04-desktop-amd64 system.
 
-## 1. To install you must following requirement above
+## 1. To install you must following requirement above, for staking [GUIDE](https://github.com/fatalbar/testnet-manual/tree/main/Transformers/staking)
 
 **Command-line**
 ```bash
