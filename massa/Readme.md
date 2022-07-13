@@ -80,7 +80,7 @@ wallet_remove_addresses <your address>
 ```
 * Restore Wallet from previous wallet if you already have, change `your_key` with your key already backup
 ```bash
-wallet_add_private_keys <your_key>
+wallet_add_secret_keys <your_key>
 ```
 * view your wallet
 ```bash
