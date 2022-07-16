@@ -45,10 +45,12 @@ sudo dpkg -i mundis_0.9.27-2_amd64.deb
 ```
 Copy your `validator-keypair.json` identity keypair file generated during Registration to the `/var/lib/mundis/validator-identity.json` location.
 
-If you already Backup your old SEED Pharse you can Restore by using this Command
+If you already Backup your old SEED Pharse you can Recover by using this Command
 ```bash
-mundis-keygen recover
+rm -rf /var/lib/mundis/validator-identity.json
+mundis-keygen restore -o ~/var/lib/mundis/validator-identity.json
 ```
+
 Configure DEVNET endpoint and default identity:
 ```bash
 mundis config set --url http://api.devnet.mundis.io
