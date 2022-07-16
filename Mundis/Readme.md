@@ -43,7 +43,18 @@ Install Binary
 curl -O https://release.mundis.io/v0.9.27/mundis_0.9.27-2_amd64.deb
 sudo dpkg -i mundis_0.9.27-2_amd64.deb
 ```
-Copy your `validator-keypair.json` identity keypair file generated during Registration to the `/var/lib/mundis/validator-identity.json` location.
+Add custom port setup the firewall on your computer to allow incoming TCP connections on ports `22`, `8000` and `10000`
+```bash
+ufw allow 8000 && ufw allow 10000 && ufw allow 22
+sudo ufw allow 22/tcp
+sudo ufw allow 8000/tcp
+sudo ufw allow 10000/tcp
+sudo ufw enable
+```
+Check your firewall status,_ make sure you found port `22`,`8000` & `10000` active
+```bash
+sudo ufw status
+```
 
 If you already Backup your old SEED Pharse you can Recover by using this Command
 ```bash
