@@ -29,6 +29,26 @@ systemctl restart firewalld
 ```bash
 apt install firewalld -y
 ```
+
+## Upgrade TTFSC to 0.1.0 (Latest version) 07.16.22
+
+Delete old file
+```bash
+rm -rf ttfsc_0.0.1_devnet
+rm -rf config.json
+```
+
+Download New File
+```bash
+wget https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_0.1.0_2f1a297_devnet
+chmod 755 ttfsc_0.1.0_2f1a297_devnet
+```
+Run Node again 
+```bash
+cd testnet
+./ttfsc_0.1.0_2f1a297_devnet
+```
+
 ## 2. **Download TTFSC FILE**
 ```bash
 mkdir testnet
