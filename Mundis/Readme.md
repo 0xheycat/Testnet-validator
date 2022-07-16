@@ -32,7 +32,7 @@ Please Download MobaXterm to easy Managing your Directory DATA on VPS
 You can Download MobaXterm on [Official Website](https://mobaxterm.mobatek.net/download.html)
 if you using Android you can Download Application with support SFTP on [Playstore](https://play.google.com/store/apps/details?id=com.server.auditor.ssh.client&hl=in&gl=US) 
 
-## 1.3 Download requirement file
+## 1.3 Installation
 
 Upgrade & install curl
 ```bash
