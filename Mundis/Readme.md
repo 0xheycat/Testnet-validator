@@ -4,7 +4,8 @@
 * [Twitter](https://twitter.com/MundisNetwork)
 * [Github](https://github.com/mundisnetwork)
 
-## 1.1 System Requirement
+## 1.1 Hardware & Software Requirements
+* Software : `Ubuntu 20.04 x64` (Server or Desktop) is the only supported OS for the DEVNET.
 * CPU
 8 cores / 16 threads, or more
 2.6GHz, or faster
@@ -19,6 +20,10 @@ Operating System: 200GB
 * The OS may be installed on the Accounts & Ledger disk, though testing has shown better performance with the ledger on its own disk
 * GPU
 Not necessary at this time
+* Network :
+Ensure the machine used is not behind a residential NAT to avoid NAT traversal issues.
+A cloud-hosted machine with a public IP address works best.
+Ensure that IP ports 8000 through 10000 are not blocked for Internet inbound and outbound traffic.
 
 ## _BEFORE YOU RUNNING YOUR NODE MAKE SURE YOU ALREADY REGISTER YOUR VALIDATOR ON JUNE OTHERWISE YOU DIDNT REWARDED, YOU CAN CHECK FROM OFFICIAL DOCUMENT FROM [MUNDIS](https://docs.mundis.io/rattle-shake/register)_
 
