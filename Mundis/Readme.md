@@ -99,6 +99,8 @@ Access the [DEVNET Metrics dashboard](http://metrics.devnet.mundis.io:3000/d/loc
 
 ![metrics-dashboard-c83c7a58ba94021d0666ef490fa0058d](https://user-images.githubusercontent.com/81378817/179369060-67a7014e-da82-474a-ad11-7fbcdf83eaba.png)
 
+# Congrats Your node active now
+
 ## 1.4 Troubleshooting
 The `/var/log/mundis/validator.log` file is empty or does not exist.
 
