@@ -48,8 +48,16 @@ Run Node again
 cd testnet
 ./ttfsc_0.1.0_2f1a297_devnet
 ```
-
-## 2. **Download TTFSC FILE**
+Make your TFSC service on Background 
+```bash
+cd testnet
+screen -dmS tfsc1 bash -c './ttfsc_0.1.0_2f1a297_devnet'
+```
+To back your screen, to close without terminating `CTRL+A+D`
+```bash
+screen -x tfsc1 
+```
+## 2. **Download TTFSC FILE _old file_**
 ```bash
 mkdir testnet
 cd testnet
