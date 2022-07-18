@@ -46,12 +46,12 @@ chmod 755 ttfsc_0.1.0_2f1a297_devnet
 Run Node again 
 ```bash
 cd testnet
-./ttfsc_0.1.0_2f1a297_devnet
+./ttfsc_0.1.0_2f1a297_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd testnet
-screen -dmS tfsc1 bash -c './ttfsc_0.1.0_2f1a297_devnet'
+screen -dmS tfsc1 bash -c './ttfsc_0.1.0_2f1a297_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
