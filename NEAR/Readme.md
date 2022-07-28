@@ -21,13 +21,13 @@ ID | Status | Publish date | Due date | Owner | Description | Max points | Type 
 -- | -- | -- | -- | -- | -- | -- | -- | --
 [001](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/001.md) | Published | 2022-07-13 | 2022-08-11 | OSA | Create your Shardnet wallet & deploy the NEAR CLI. | - | Core | Shardnet
 [002](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/002.md) | Published | 2022-07-13 | 2022-08-11 | OSA | Deploying a node, download a snapshot, sync it, activate the node as a validator. | 30 UNP | Core | Shardnet
-[003]() | Published | 2022-07-13 | 2022-08-11 | OSA | Deploy a new staking pool for your validator | 10 UNP | Core | Shardnet
-[004]() | Published | 2022-07-13 | 2022-08-11 | OSA | Setup tools for monitoring node status | 15 UNP | Core | Shardnet
-[005]() | Published | 2022-07-15 | 2022-08-11 | Meta Pool | Setup a validator node on one of the most popular cloud providers. | 10 DNP | Optional | Shardnet
-[006]() | Published | 2022-07-19 | 2022-08-11 | Meta Pool | Cron task for ping | 5 UNP | Core | Shardnet
-[007]() | Published | 2022-07-22 | 2022-09-07 | LiNEAR | Data Science for Staking | 20 DNP | Optional | Shardnet
-[008]() | Published | 2022-07-26 | 2022-08-11 | Meta Pool | Split revenue for staking rewards | 30 DNP50 UNP | Optional | Shardnet
-[009]() | Draft | 2022-07-29 | 2022-09-07 | LiNEAR | Staking Farm 2.0 | 30 DNP50 UNP | Optional | Shardnet
+[003](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/003.md) | Published | 2022-07-13 | 2022-08-11 | OSA | Deploy a new staking pool for your validator | 10 UNP | Core | Shardnet
+[004](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/004.md) | Published | 2022-07-13 | 2022-08-11 | OSA | Setup tools for monitoring node status | 15 UNP | Core | Shardnet
+[005](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/005.md) | Published | 2022-07-15 | 2022-08-11 | Meta Pool | Setup a validator node on one of the most popular cloud providers. | 10 DNP | Optional | Shardnet
+[006](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/006.md) | Published | 2022-07-19 | 2022-08-11 | Meta Pool | Cron task for ping | 5 UNP | Core | Shardnet
+[007](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/007.md) | Published | 2022-07-22 | 2022-09-07 | LiNEAR | Data Science for Staking | 20 DNP | Optional | Shardnet
+[008](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/008.md) | Published | 2022-07-26 | 2022-08-11 | Meta Pool | Split revenue for staking rewards | 30 DNP50 UNP | Optional | Shardnet
+[009](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/009.md) | Draft | 2022-07-29 | 2022-09-07 | LiNEAR | Staking Farm 2.0 | 30 DNP50 UNP | Optional | Shardnet
 
 
 Summary for the point system:
