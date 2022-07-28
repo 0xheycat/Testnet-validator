@@ -20,7 +20,7 @@ This file contains an overview of the published and draft challenges for Stake W
 ID | Status | Publish date | Due date | Owner | Description | Max points | Type | Target network
 -- | -- | -- | -- | -- | -- | -- | -- | --
 [001](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/001.md) | Published | 2022-07-13 | 2022-08-11 | OSA | Create your Shardnet wallet & deploy the NEAR CLI. | - | Core | Shardnet
-[002]() | Published | 2022-07-13 | 2022-08-11 | OSA | Deploying a node, download a snapshot, sync it, activate the node as a validator. | 30 UNP | Core | Shardnet
+[002](https://github.com/fatalbar/testnet-manual/blob/main/NEAR/challange/002.md) | Published | 2022-07-13 | 2022-08-11 | OSA | Deploying a node, download a snapshot, sync it, activate the node as a validator. | 30 UNP | Core | Shardnet
 [003]() | Published | 2022-07-13 | 2022-08-11 | OSA | Deploy a new staking pool for your validator | 10 UNP | Core | Shardnet
 [004]() | Published | 2022-07-13 | 2022-08-11 | OSA | Setup tools for monitoring node status | 15 UNP | Core | Shardnet
 [005]() | Published | 2022-07-15 | 2022-08-11 | Meta Pool | Setup a validator node on one of the most popular cloud providers. | 10 DNP | Optional | Shardnet
