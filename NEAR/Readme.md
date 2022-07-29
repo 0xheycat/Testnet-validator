@@ -1,6 +1,7 @@
 Testnet Stake Wars validator active on NEAR                                                                                  
                                                              
-![181009137-722edf99-d4ab-417e-8e61-d872e5c3d110](https://user-images.githubusercontent.com/81378817/181384217-1deb51fb-2a4f-4561-a52d-5ccdd3daeb64.png)
+![180386866-d7d109a2-bf61-4ebf-ae8e-26f64604a094](https://user-images.githubusercontent.com/81378817/181848010-012ce1a7-a824-463b-b5fc-944f22638af1.png)
+
 
 
 ## Official links
