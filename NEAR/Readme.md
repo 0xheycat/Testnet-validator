@@ -1,4 +1,4 @@
-Testnet Stake Wars validator active on NEAR 
+Testnet Stake Wars validator active on NEAR                                                                                  
                                                              
 ![181009137-722edf99-d4ab-417e-8e61-d872e5c3d110](https://user-images.githubusercontent.com/81378817/181384217-1deb51fb-2a4f-4561-a52d-5ccdd3daeb64.png)
 
@@ -36,3 +36,6 @@ Summary for the point system:
 * Unlocked NEAR Points (UNP): at the end of the Stake Wars program, each Unlocked NEAR Point (UNP) will be translated into 1 unlocked NEAR token, granted to your mainnet account.
 
 Form for Stakewars submissions https://docs.google.com/forms/d/e/1FAIpQLScp9JEtpk1Fe2P9XMaS9Gl6kl9gcGVEp3A5vPdEgxkHx3ABjg/viewform
+
+
+Thank you thank [KJNODES](https://github.com/kj89)
