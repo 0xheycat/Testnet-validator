@@ -101,6 +101,15 @@ Access the [DEVNET Metrics dashboard](http://metrics.devnet.mundis.io:3000/d/loc
 
 # Congrats Your node active now
 
+## Deleting NODE
+```bash
+sudo systemctl stop mundis-validator
+sudo systemctl disable mundis-validator
+rm /etc/systemd/system/mundis-validator.service -rf
+rm -rf /var/lib/mundis/
+rm -rf mundis_0.9.27-2_amd64.deb
+```
+
 ## 1.4 Troubleshooting
 The `/var/log/mundis/validator.log` file is empty or does not exist.
 
