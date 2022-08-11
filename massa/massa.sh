@@ -49,8 +49,8 @@ sudo apt-get install librocksdb-dev build-essential
 echo -e "\e[1m\e[32m3. Downloading and building massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
-wget https://github.com/massalabs/massa/releases/download/TEST.12.0/massa_TEST.12.0_release_linux.tar.gz
-tar xvzf massa_TEST.12.0_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.13.0/massa_TEST.13.0_release_linux.tar.gz
+tar xvzf massa_TEST.13.0_release_linux.tar.gz
 # cd massa/massa-node/base_config && rm -rf config.toml
 # wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/config.toml
 cd $HOME
