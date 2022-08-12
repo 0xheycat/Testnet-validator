@@ -1,3 +1,6 @@
+## Announcing validator IPs
+
+
 Open `node_key.json` and copy public key with ed552
 ```bash
 cd .near
