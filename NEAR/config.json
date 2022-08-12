@@ -33,7 +33,7 @@
     "addr": "0.0.0.0:24567",
     "external_address": "",
     "boot_nodes": "ed25519:2p3oWctKsYU12k9d1Rm45zXs5VWfYsQLdKfrrBZvMN4Z@34.147.104.174:24567,ed25519:6eC6SQaeHUXNfMzskdBZpFEwd1khW1bdJLXURroqmqF1@34.68.60.150:24567,ed25519:6ZSj24LoDqKS4KCBPt9pUWmx5J1cqBU1rfEGcRs6nZ9g@34.81.129.54:24567,ed25519:Fsy5iNZDGzx46VT22AEwnE16dPSToNqnvcn3gC3spjp9@34.86.110.187:24567",
-    "public_addrs": "Public_KEY@Your_IP:24567", ##open $home/.neard/node_key.json and copy your public address
+    "public_addrs": "Public_KEY@Your_IP:24567",
     "whitelist_nodes": "",
     "max_num_peers": 40,
     "minimum_outbound_peers": 5,
