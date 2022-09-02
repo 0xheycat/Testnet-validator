@@ -30,7 +30,7 @@ systemctl restart firewalld
 apt install firewalld -y
 ```
 
-## Upgrade TTFSC to 0.1.0 (Latest version) 07.16.22
+## Upgrade TTFSC to 0.3.0 08/24/2022 (Latest version)
 
 Delete old file
 ```bash
@@ -38,32 +38,40 @@ rm -rf ttfsc_0.0.1_devnet
 rm -rf config.json
 ```
 
+Make new Folder
+```bash
+mkdir tfsc
+```
 Download New File
 ```bash
-wget https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_0.1.0_2f1a297_devnet
-chmod 755 ttfsc_0.1.0_2f1a297_devnet
+cd tfsc
+wget -q fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.3.0_d6eda1a_devnet
+chmod +x ttfsc_v0.3.0_d6eda1a_devnet
 ```
-Run Node again 
+
+Setting automatically `config.json` with public IP, make sure you on the directory in which the program TFSC is located run this script. 
 ```bash
-cd testnet
-./ttfsc_0.1.0_2f1a297_devnet -m
+cd
+cd tfsc
+PUB_IP=$(wget -qO- eth0.me);wget -qO- pastebin.com/raw/MfS126mf|sed 's#\"ip\": \"pub_ip\"#\"ip\": '\"${PUB_IP}\"'#' > config.json
+```
+
+Running Node 
+```bash
+cd
+cd tfsc
+./ttfsc_v0.3.0_d6eda1a_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
-cd testnet
-screen -dmS tfsc1 bash -c './ttfsc_0.1.0_2f1a297_devnet -m'
+cd tfsc
+screen -dmS tfsc bash -c './ttfsc_v0.3.0_d6eda1a_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
-screen -x tfsc1 
+screen -x tfsc 
 ```
-## 2. **Download TTFSC FILE _old file_**
-```bash
-mkdir testnet
-cd testnet
-wget https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_0.0.1_devnet
-chmod +x ttfsc_0.0.1_devnet
-```
+
 **To view the automatically generated directories and files under the current directory**
 <html>
 <body>
