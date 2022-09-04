@@ -123,6 +123,15 @@ haqqd tx staking edit-validator \
  --fees 0.025aISLM \
  --keyring-backend file
 ```
+Unjail Validator
+```bash
+haqqd tx slashing unjail \
+  --broadcast-mode=block \
+  --from=$WALLET \
+  --chain-id=$HAQQ_CHAIN_ID \
+  --gas=auto
+```
+
 check log
 ```bash
 journalctl -fu haqqd -o cat
