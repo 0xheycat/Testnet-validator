@@ -12,3 +12,7 @@ haqqd gentx wallet 10000000000000000000aISLM \
 --identity="<your_keybase_id>" \
 --details="your_validator_description>"
 ```
+
+After executing command, . Submit a pull request (gentx folder) with the given gentx
+
+File Genesis transaction written to "/.haqqd/config/gentx/gentx-xxx.json"
