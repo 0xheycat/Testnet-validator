@@ -87,7 +87,7 @@ haqqd query bank balances $HAQQ_WALLET_ADDRESS
 ```
 
 ## 2.0 Create Validator
-Make sure your status of node must be `false` and your wallet has funded
+Make sure your status of node must be catching up `false` and your wallet has funded
 you can check your status sync
 ```bash
 haqqd status 2>&1 | jq .SyncInfo
