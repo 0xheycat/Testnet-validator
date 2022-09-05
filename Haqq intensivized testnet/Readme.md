@@ -122,7 +122,6 @@ haqqd tx staking edit-validator \
  --identity="<your_keybase_id>" \
  --details="<your_validator_description>" \
  --website="<your_website>" \ 
- --Contact="<your_email>" \
  --from $WALLET
 ```
 Unjail Validator
