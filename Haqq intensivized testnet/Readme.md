@@ -97,17 +97,16 @@ Create Validator
 ```bash
 haqqd tx staking create-validator \
   --amount 10000000aISLM \
-  --pubkey $(haqqd tendermint show-validator) \
-  --moniker $NODENAME \
-  --chain-id $HAQQ_CHAIN_ID \
+  --from $WALLET \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation="1000000" \
+  --pubkey $(haqqd tendermint show-validator) \
+  --moniker $NODENAME \
+  --chain-id $HAQQ_CHAIN_ID \
   --gas-prices="0.025aISLM" \
-  --from $WALLET \
   --node https://rpc.tm.testedge.haqq.network:443
-  --keyring-backend file
 ```
 After Validator Created you can check here https://exp.nodeist.net/Haqq/staking and Register instensi testnet https://haqq-network.typeform.com/to/zEgmX3TO
 
