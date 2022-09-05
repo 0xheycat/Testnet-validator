@@ -30,11 +30,17 @@ systemctl restart firewalld
 apt install firewalld -y
 ```
 
-## Upgrade TTFSC to 0.3.0 08/24/2022 (Latest version)
+## Upgrade TTFSC to 0.4.0 updated 09/05/2022 (Latest version)
+Update Details
+1. Optimized the transaction process and reduced the calculation workload of signature and signature verification by about 50%. 
+2. Optimized network transmission to reduce about 75% of network data traffic in the transaction flow. 
+3. Solved the bug of low transaction success rate. 
+4. Optimized the network connection to resolve the inconsistency between the underlying TCP connection and the nodes.
 
 Delete old file
 ```bash
-rm -rf ttfsc_0.0.1_devnet
+cd tfsc
+rm -rf ttfsc_v0.3.0_d6eda1a_devnet
 rm -rf config.json
 ```
 
@@ -45,8 +51,8 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.3.0_d6eda1a_devnet
-chmod +x ttfsc_v0.3.0_d6eda1a_devnet
+wget -q fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.4.0_762f9d0_devnet
+chmod +x ttfsc_v0.4.0_762f9d0_devnet
 ```
 
 Setting automatically `config.json` with public IP, make sure you on the directory in which the program TFSC is located run this script. 
@@ -60,17 +66,18 @@ Running Node
 ```bash
 cd
 cd tfsc
-./ttfsc_v0.3.0_d6eda1a_devnet -m
+./ttfsc_v0.4.0_762f9d0_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd tfsc
-screen -dmS tfsc bash -c './ttfsc_v0.3.0_d6eda1a_devnet -m'
+screen -dmS tfsc bash -c './ttfsc_v0.4.0_762f9d0_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
 screen -x tfsc 
 ```
+Done you succesfull update with latest version
 
 **To view the automatically generated directories and files under the current directory**
 <html>
