@@ -110,6 +110,10 @@ haqqd tx staking create-validator \
 ```
 After Validator Created you can check here https://exp.nodeist.net/Haqq/staking and Register instensi testnet https://haqq-network.typeform.com/to/zEgmX3TO
 
+Now you can Delegate some Amount to your Validator, change 10000000aISLM with amount you want 
+```bash
+haqqd tx staking delegate $HAQQ_VALOPER_ADDRESS 10000000aISLM --from=$WALLET --chain-id=$HAQQ_CHAIN_ID
+```
 ## 2.1 Useful Command
 Edit Validator
 ```bash
@@ -130,7 +134,22 @@ haqqd tx slashing unjail \
   --chain-id=$HAQQ_CHAIN_ID \
   --gas=auto
 ```
-
+Delegate and Stake to your Validator
+```bash
+haqqd tx staking delegate $HAQQ_VALOPER_ADDRESS 10000000aISLM --from=$WALLET --chain-id=$HAQQ_CHAIN_ID
+```
+Redelegate to other Validator
+```bash
+haqqd tx staking redelegate <ValidatorAddress> <destValidatorAddress> 10000000aISLM --from=$WALLET --chain-id=$HAQQ_CHAIN_ID
+```
+Radeem All your Reward 
+```bash
+haqqd tx distribution withdraw-all-rewards --from=$WALLET --chain-id=$HAQQ_CHAIN_ID
+```
+Radeem your reward with commision
+```bash
+haqqd tx distribution withdraw-rewards $HAQQ_VALOPER_ADDRESS --from=$WALLET --commission --chain-id=$HAQQ_CHAIN_ID
+```
 check log
 ```bash
 journalctl -fu haqqd -o cat
