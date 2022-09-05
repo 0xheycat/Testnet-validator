@@ -121,7 +121,8 @@ haqqd tx staking edit-validator \
  --chain-id $HAQQ_CHAIN_ID \
  --identity="<your_keybase_id>" \
  --details="<your_validator_description>" \
- --website="<your_website>" \
+ --website="<your_website>" \ 
+ --Contact="<your_email>" \
  --from $WALLET
 ```
 Unjail Validator
@@ -129,8 +130,7 @@ Unjail Validator
 haqqd tx slashing unjail \
   --broadcast-mode=block \
   --from=$WALLET \
-  --chain-id=$HAQQ_CHAIN_ID \
-  --gas=auto
+  --chain-id=$HAQQ_CHAIN_ID
 ```
 Delegate and Stake to your Validator
 ```bash
