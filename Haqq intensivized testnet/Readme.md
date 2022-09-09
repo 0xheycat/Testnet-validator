@@ -22,7 +22,7 @@ wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/H
 ```
 ## 🟢Update binary haqqd to v1.0.3 Automatic (Quick Install)
 ```bash
-wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
+wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
 ```
 > After complete upgrade you can following command below
 
