@@ -62,7 +62,8 @@ haqqd config chain-id $HAQQ_CHAIN_ID
 haqqd config keyring-backend test
 
 # init
-haqqd init $NODENAME --chain-id $HAQQ_CHAIN_ID
+haqqd init $NODENAME --chain-id haqq_54211-2 && \
+haqqd config chain-id haqq_54211-2
 
 # remove & download genesis
 rm -rf $HOME/.haqqd/config/genesis.json && cd $HOME/.haqqd/config/ && wget https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/genesis.json
