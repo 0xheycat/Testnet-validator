@@ -20,7 +20,7 @@ fi
 if [ ! $WALLET ]; then
 	echo "export WALLET=wallet" >> $HOME/.bash_profile
 fi
-echo "export HAQQ_CHAIN_ID=haqq_53211-1" >> $HOME/.bash_profile
+echo "export HAQQ_CHAIN_ID=haqq_54211-2" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 echo '================================================='
