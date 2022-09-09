@@ -50,8 +50,16 @@ source ~/.bash_profile
 go version
 
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
+# Remove old binary
+sudo rm /etc/systemd/system/haqq* -rf
+sudo rm $(which haqqd) -rf
+sudo rm $HOME/.haqqd* -rf
+sudo rm $HOME/haqq -rf
+sed -i '/HAQQ_/d' ~/.bash_profile
+
 # download binary
-cd $HOME/haqq && \
+cd $HOME
+git clone https://github.com/haqq-network/haqq.git && cd haqq
 git fetch && \
 git checkout v1.0.3 && \
 make install && \
