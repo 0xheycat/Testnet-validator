@@ -196,3 +196,31 @@ sudo rm $HOME/.haqqd* -rf
 sudo rm $HOME/haqq -rf
 sed -i '/HAQQ_/d' ~/.bash_profile
 ```
+
+## Troubleshoting
+
+1. how to fix current error 
+
+![Screenshot_9](https://user-images.githubusercontent.com/81378817/189382197-094c1a78-4d0e-4cfd-8cfe-13c3fac3a428.png)
+
+Answer= Go to Directory `/$HOME/.haqqd/config/app.toml`  
+
+> you can use this command
+```bash
+sudo nano /$HOME/.haqqd/config/app.toml
+```
+> scrool down and find `JSON RPC Configuration` like pic below and replace with new port `example 9545 & 9546` and save with `CTRL+X`
+
+![Screenshot_10](https://user-images.githubusercontent.com/81378817/189384512-ab00e579-122c-4515-a0e5-17598385cbfb.png)
+
+> restart your Node
+```bash
+sudo systemctl daemon-reload && \
+sudo systemctl enable haqqd && \
+sudo systemctl restart haqqd && \
+sudo journalctl -u haqqd -f -o cat
+```
+
+> now your node will start synchron 
+
+![Screenshot_11](https://user-images.githubusercontent.com/81378817/189385475-84baea3c-2edd-401b-85f3-d4743e720b67.png)
