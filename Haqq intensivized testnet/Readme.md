@@ -65,7 +65,7 @@ haqqd keys add $WALLET --recover
 ```
 check your wallet list
 ```bash
-haqqd keys add list
+haqqd keys list
 ```
 Save your wallet on bash Profile
 ```bash
