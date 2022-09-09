@@ -20,6 +20,12 @@ Automatic instalation
 ```bash
 wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
 ```
+## 🟢Update binary haqqd to v1.0.3 Automatic (Quick Install)
+```bash
+wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
+```
+> After complete upgrade you can following command below
+
 Make bash profile
 ```bash
 source $HOME/.bash_profile
