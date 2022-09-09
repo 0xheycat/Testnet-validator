@@ -34,26 +34,7 @@ check status sync
 ```bash
 haqqd status 2>&1 | jq .SyncInfo
 ```
-Quick synch Node (Optional)
-```bash
-sudo systemctl stop haqqd 
-haqqd tendermint unsafe-reset-all --home $HOME/.haqqd --keep-addr-book 
-pruning="custom" 
-pruning_keep_recent="100" 
-pruning_keep_every="0" 
-pruning_interval="10" 
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.haqqd/config/app.toml 
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.haqqd/config/app.toml 
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.haqqd/config/app.toml 
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.haqqd/config/app.toml 
-cd 
-rm -rf ~/.haqqd/data; \ 
-wget -O - http://snap.stake-take.com:8000/haqq.tar.gz | tar xf - 
-mv $HOME/root/.haqqd/data $HOME/.haqqd 
-rm -rf $HOME/root 
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/StakeTake/guidecosmos/main/haqq/haqq_53211-1/addrbook.json" 
-sudo systemctl restart haqqd
-```
+
 ## 1.3 Create Wallet 
 create new wallet
 ```bash
