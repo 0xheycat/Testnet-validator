@@ -50,26 +50,13 @@ source ~/.bash_profile
 go version
 
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
-# Remove old binary
-sudo rm /etc/systemd/system/haqq* -rf
-sudo rm $(which haqqd) -rf
-sudo rm $HOME/.haqqd* -rf
-sudo rm $HOME/haqq -rf
-sed -i '/HAQQ_/d' ~/.bash_profile
 
 # download binary
-cd $HOME
+cd $HOME && rm $HOME/haqq -rf
 git clone https://github.com/haqq-network/haqq.git && cd haqq
-git fetch && \
-git checkout v1.0.3 && \
-make install && \
-haqqd version --long | head
+git checkout v1.0.3
+make install 
 
-name: haqq
-server_name: haqqd
-version: '"1.0.3"'
-commit: 58215364d5be4c9ab2b17b2a80cf89f10f6de38a
-...
 # config
 haqqd config chain-id $HAQQ_CHAIN_ID
 haqqd config keyring-backend test
