@@ -83,17 +83,17 @@ haqqd status 2>&1 | jq .SyncInfo
 Create Validator
 ```bash
 haqqd tx staking create-validator \
-  --amount 10000000aISLM \
+  --amount 1000000000000000000aISLM \
   --from $WALLET \
-  --commission-rate="0.10" \
-  --commission-max-rate="0.20" \
-  --commission-max-change-rate="0.01" \
-  --min-self-delegation="1000000" \
+  --commission-max-change-rate "0.05" \
+  --commission-max-rate "0.20" \
+  --commission-rate "0.05" \
+  --min-self-delegation "1" \
   --pubkey $(haqqd tendermint show-validator) \
   --moniker $NODENAME \
   --chain-id $HAQQ_CHAIN_ID \
-  --gas-prices="0.025aISLM" \
-  --node https://rpc.tm.testedge.haqq.network:443
+  --gas 300000 \
+  -y
 ```
 After Validator Created you can check here https://exp.nodeist.net/Haqq/staking and Register instensi testnet https://haqq-network.typeform.com/to/zEgmX3TO
 
