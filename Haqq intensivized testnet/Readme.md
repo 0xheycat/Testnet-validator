@@ -62,7 +62,7 @@ You need private keys to export your wallet to website,
 ```bash
 haqqd keys unsafe-export-eth-key $WALLET
 ```
-Copy your private keys then import to Metamask,now you can Claim faucet There https://testedge.haqq.network/
+Copy your private keys then import to Metamask,now you can Claim faucet There https://testedge2.haqq.network/
 
 ![Screenshot_211](https://user-images.githubusercontent.com/81378817/188313277-c96e1907-01a1-4386-a7e4-4a12ddb04ea6.jpg)
 
