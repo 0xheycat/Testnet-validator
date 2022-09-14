@@ -21,26 +21,31 @@ ufw allow 41516
 sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
-* Restart your firewall
-```bash
-systemctl restart firewalld
-```
+
 * **Install firewall**
 ```bash
 apt install firewalld -y
 ```
+* Restart your firewall
+```bash
+systemctl restart firewalld
+```
 
-## Upgrade TTFSC to 0.5.0 updated 10/sept/2022 (Latest version)
+## Upgrade TTFSC to 0.5.1 updated 15/sept/2022 (Latest version)
+> Transformer 2nd phase for public LIVE:
+
 Update Details
-1. Solved the problem of block height out of sync
-2. Solved the problem of failing to claim rewards or synchronize the network caused by time zone issues. 
-3. Solved the problem of some blocks' height showing empty 
-
+1. Solve the block jamming at certain heights
+2. Solve the repeated rollback. 
+3. Solve that blocks cannot be synchronized to the highest height due to incorrect calculation of handling fee 
+4. Solve the block replenishment failure in some cases
+5. This phase will not limit the IP address to build nodes
+6. Public Testnet
 
 Delete old file
 ```bash
 cd tfsc
-rm -rf ttfsc_v0.4.0_762f9d0_devnet
+rm -rf ttfsc_v0.5.0_cc7126b_devnet
 rm -rf config.json
 ```
 
@@ -51,8 +56,8 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.5.0_cc7126b_devnet
-chmod +x ttfsc_v0.5.0_cc7126b_devnet
+wget -q https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.5.1_fe00dc8_devnet
+chmod +x ttfsc_v0.5.1_fe00dc8_devnet
 ```
 
 Setting automatically `config.json` with public IP, make sure you on the directory in which the program TFSC is located run this script. 
@@ -66,12 +71,12 @@ Running Node
 ```bash
 cd
 cd tfsc
-./ttfsc_v0.5.0_cc7126b_devnet -m
+./ttfsc_v0.5.1_fe00dc8_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd tfsc
-screen -dmS tfsc bash -c './ttfsc_v0.5.0_cc7126b_devnet -m'
+screen -dmS tfsc bash -c './ttfsc_v0.5.1_fe00dc8_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
