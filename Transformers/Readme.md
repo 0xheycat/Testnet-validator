@@ -94,70 +94,29 @@ config.json | JSON file | configuration file
 </body>
 </html>
 
-## **Download and edit config.toml with your own IP, you will find 2 text CHANGE WITH YOUR IP** 
- 
- **Remove old file and Download new json**
-```bash
-cd testnet
-rm -rf config.json
-wget https://raw.githubusercontent.com/fatalbar/testnet-manual/main/config.json
-```
- **Please Edit your Config with your own IP, please follow step with command**
-```bash
-nano config.json
-```
-![Screenshot_4](https://user-images.githubusercontent.com/81378817/178102969-9f3f472c-1abc-4cfa-8f30-e94dcd7e3d62.jpg)
-
-
-_You only need to configure the external network IP, the IP field. The corresponding open port shall be port 41516 and port 41517,._
-
-After you change with your IP you can close nano with
-`CTRL+X` then y and ENTER
-
-![Screenshot_6](https://user-images.githubusercontent.com/81378817/178103730-13e05637-5004-47d9-a46d-210b65314ce5.jpg)
-
-_NOTICE:_
-_The private key in the cert must not be lost, please backup to your pc, you can find private key directory in `root/testnet/cert/file_your_Private_Key`._
-
-## **Run node follow this command**
-```bash
-cd testnet
-./ttfsc_0.0.1_devnet -m
-```
-you will see menu, `CTRL+A+D` to make service on background you need install screen
-```bash
-apt install screen
-```
-then Re Run your NODE
-```bash
-screen -S tfsc
-./ttfsc_0.0.1_devnet -m
-```
-To back your screen
-```bash
-screen -Rd tfsc
-```
-![Screenshot_7](https://user-images.githubusercontent.com/81378817/178104003-cd8e4726-9f0d-44f7-99f1-ed2c5fc2038a.jpg)
-
-<html>
-<body>
-<!--StartFragment-->
-
-Order | Menu item | Function
--- | -- | --
-1 | Transaction | Transaction
-2 | Stake | Stake
-3 | Unstake | Disinvest
-4 | Invest | Invest
-5 | Disinvest | Disinvest
-6 | Bonus | apply
-7 | PrintAccountInfo | Print account
-0 | Exit | Exit program
-
-<!--EndFragment-->
-</body>
-</html>
 
 ## You have success on first STEP, WAIT for next STEP 
 Thank you
 
+## Troubleshooting
+
+1. Stuck block 
+
+Delete your data.db
+```bash
+cd tfsc
+rm -rf data.db
+```
+Download the file
+```bash
+wget -O data.db.tar fastcdn.uscloudmedia.com/transformers/db/data.db.67148.tar
+```
+Extract new db
+```bash
+tar -xvf data.db.tar
+```
+Delete old zip file
+```bash
+rm data.db.tar
+```
+It's take a few times to sync your node latest block
