@@ -105,11 +105,13 @@ haqqd tx staking delegate $HAQQ_VALOPER_ADDRESS 1ISLM --from=$WALLET --chain-id=
 Edit Validator
 ```bash
 haqqd tx staking edit-validator \
- --chain-id $HAQQ_CHAIN_ID \
- --identity="<your_keybase_id>" \
- --details="<your_validator_description>" \
- --website="<your_website>" \ 
- --from $WALLET
+--moniker="<Yournodename>" \
+--identity="<your_keybase_id>" \
+--details="<your_validator_description>" \
+--chain-id=haqq_54211-2 \
+--from=$WALLET \
+--gas=auto \
+-y 
 ```
 Unjail Validator
 ```bash
