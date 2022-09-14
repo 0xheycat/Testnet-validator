@@ -1,4 +1,9 @@
-welcome to Transformer testnet [Official website](https://www.tfsc.io/doc/learn/run-rpc-node/#hardware-requirements)
+welcome to Transformer testnet 
+
+## Official Documentation
+* [Official website](https://www.tfsc.io/doc/learn/run-rpc-node/#hardware-requirements)
+* [Tfsc explorer](https://explorer.tfsc.io/)
+* [Discord](https://discord.gg/qWEd5jdftY)
 
 ## Hardware requirements：
 * CPU: Recommend for Intel Pentium CPU series and above, core number 8 core and above.
@@ -83,6 +88,7 @@ To back your screen, to close without terminating `CTRL+A+D`
 screen -x tfsc 
 ```
 Done you succesfull update with latest version
+you can check your Node, paste with your address https://explorer.tfsc.io/
 
 **To view the automatically generated directories and files under the current directory**
 <html>
