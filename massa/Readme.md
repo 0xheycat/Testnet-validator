@@ -52,7 +52,7 @@ Wallet_info
 * Buy Rolls (Make sure your wallet have enough Balance before doing this Task) to close screen `CTRL+A+D` (proses already on background) 
 ```bash
 cd $HOME
-wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
+wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
 ```
 * Register Your Node on Discord Bot , Go to this channel `Testnet-reward-Registration` and click on the uptick emoji, and the bot will send you a message. 
 
