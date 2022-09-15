@@ -18,11 +18,11 @@ https://haqq-network.typeform.com/to/zEgmX3TO
 ## Instalation 
 Automatic instalation 
 ```bash
-wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
+wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
 ```
 ## 🟢Update binary haqqd to v1.0.3 Automatic (Quick Install)
 ```bash
-wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
+wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
 ```
 > After complete upgrade you can following command below
 
