@@ -10,7 +10,7 @@
 
 ## 1.3 Installation Automatic (Latest version)
 ```bash
-wget -O massa.sh https://raw.githubusercontent.com/fatalbar/testnet-manual/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
+wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
 * install screen and make your log active on Background, `CTRL+A+D` to close without terminating proses
 ```bash
