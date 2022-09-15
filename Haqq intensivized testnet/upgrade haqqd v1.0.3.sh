@@ -65,7 +65,7 @@ haqqd init $NODENAME --chain-id haqq_54211-2 && \
 haqqd config chain-id haqq_54211-2
 
 # remove & download genesis
-rm -rf $HOME/.haqqd/config/genesis.json && cd $HOME/.haqqd/config/ && wget https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/genesis.json
+rm -rf $HOME/.haqqd/config/genesis.json && cd $HOME/.haqqd/config/ && wget https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/genesis.json
 haqqd validate-genesis
 
 # peers
@@ -75,7 +75,7 @@ sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persisten
 
 #adding addressbook
 rm $HOME/.haqqd/config/addrbook.json
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/fatalbar/testnet-manual/main/Haqq%20intensivized%20testnet/addrbook.json"
+wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/addrbook.json"
 
 # create service
 sudo tee /etc/systemd/system/haqqd.service > /dev/null <<EOF
