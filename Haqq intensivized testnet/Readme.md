@@ -4,7 +4,7 @@
 * https://docs.haqq.network
 * https://github.com/haqq-network
 * Mainet explorer https://explorer.haqq.network/
-* Testnet Explorer https://explorer.testedge.haqq.network/
+* Testnet Explorer https://exp.nodeist.net/T-Haqq/
 * Discord https://discord.gg/hWJbjRkDQF
 * 
 ## 1.1 Hardware minimum requirements
@@ -95,7 +95,7 @@ haqqd tx staking create-validator \
   --gas 300000 \
   -y
 ```
-After Validator Created you can check here https://exp.nodeist.net/Haqq/staking and Register instensi testnet https://haqq-network.typeform.com/to/zEgmX3TO
+After Validator Created you can check here https://exp.nodeist.net/T-Haqq/staking/ and Register instensi testnet https://haqq-network.typeform.com/to/zEgmX3TO
 
 Now you can Delegate some Amount to your Validator, change 1ISLM with amount you want 
 ```bash
