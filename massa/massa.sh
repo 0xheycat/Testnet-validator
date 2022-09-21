@@ -31,7 +31,7 @@ sleep 1
 rm -rf massa
 rm -rf massa-test.sh
 rm -rf massa-testnet.sh
-rm -rf massa_TEST.11.3_release_linux.tar.gz
+rm -rf massa_TEST.14.6_release_linux.tar.gz
 
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
 # update
@@ -49,8 +49,8 @@ sudo apt-get install librocksdb-dev build-essential
 echo -e "\e[1m\e[32m3. Downloading and building massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
-wget https://github.com/massalabs/massa/releases/download/TEST.14.6/massa_TEST.14.6_release_linux.tar.gz
-tar xvzf massa_TEST.14.6_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.14.7/massa_TEST.14.7_release_linux.tar.gz
+tar xvzf massa_TEST.14.7_release_linux.tar.gz
 # cd massa/massa-node/base_config && rm -rf config.toml
 # wget https://raw.githubusercontent.com/mdlog/testnet-mdlog/main/config.toml
 cd $HOME
