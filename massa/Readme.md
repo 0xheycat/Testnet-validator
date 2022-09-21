@@ -8,7 +8,7 @@
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## 1.3 Installation massa 14.6 Automatic (Latest version)
+## 1.3 Installation massa 14.7 Automatic (Latest version)
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
