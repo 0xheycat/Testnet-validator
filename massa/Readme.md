@@ -49,7 +49,7 @@ cd massa/massa-client
 ```bash
 Wallet_info
 ```
-* Buy Rolls (Make sure your wallet have enough Balance before doing this Task) to close screen `CTRL+A+D` (proses already on background) 
+* automatic Buy Rolls (Make sure your wallet have enough Balance before doing this Task) to close screen `CTRL+A+D` (proses already on background)
 ```bash
 cd $HOME
 wget -O buyrolls.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/buyrolls.sh && chmod +x buyrolls.sh && screen -xR -S buyrolls ./buyrolls.sh
