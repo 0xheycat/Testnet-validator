@@ -2,11 +2,17 @@
 * [Website](https://massa.net/)
 * [Github](https://github.com/massalabs/massa/)
 * [Discord](https://discord.gg/massa/)
+* [Testnet Explorer](https://massa.net/testnet/#wallet)
 
 ## 1.2 Hardware requirements：
 * CPU: Recommend for ubuntu 20.4 , core number 4 core and above.
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
+
+## Information testnet Massa 14.7
+* TEST.14.7 is now running and registrations are open.
+* Scoring will start at cycle 88, on Friday, September 23 2022, 12:03 UTC
+* Scoring will end at cycle 373, on Friday, September 30 2022, 06:11 UTC
 
 ## 1.3 Installation massa 14.7 Automatic (Latest version)
 ```bash
@@ -36,13 +42,13 @@ sudo ufw enable
 ```bash
 sudo ufw status
 ```
-* Open Massa Client (please change `<passsword>` with your Client Password already ceated
+* Open Massa Client (please change `<passsword>` with your Client Password already created
 ```bash
 cd massa/massa-client
 ./massa-client -p <passsword>
 ```
 
-* You dont need to recover your old wallet 
+* please backup your wallet.dat on dir `$HOME/massa/massa-client/`, dont worry if you cant restore your old wallet because Bot already save your progress 
 ![Screenshot_11](https://user-images.githubusercontent.com/81378817/178314356-aaf68fae-4b9c-4833-ba83-8e86d2ae127c.jpg)
 
 * check your wallet Address from massa_client, copy your address then go to [Discord](https://discord.gg/massa/) to get faucet
@@ -77,7 +83,7 @@ node_testnet_rewards_program_ownership_proof ADDRESS DISCORD_ID
 node_add_staking_secret_keys <your private keys>
 ```
 
-Congratulations you have successfully registered your node.
+Congratulations you have successfully registered your node. check your node on explorer https://test.massa.net/v1/#explorer or https://massa.net/testnet/#wallet
 
 You can check your node status on [Telegram](https://t.me/massacheck_bot),add your address on Bot
 
@@ -127,4 +133,4 @@ sudo rm $HOME/.massa* -rf
 sudo rm $HOME/massa -rf
 ```
 
-## Thank you massacaptain, [Source](https://medium.com/@massacaptain/tutorial-running-node-massa-dengan-satu-command-line-32a9bc472b46)
+## source massacaptain, [Source](https://medium.com/@massacaptain/tutorial-running-node-massa-dengan-satu-command-line-32a9bc472b46)
