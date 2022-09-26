@@ -36,21 +36,19 @@ apt install firewalld -y
 systemctl restart firewalld
 ```
 
-## Upgrade TTFSC to 0.6.0 updated 20/sept/2022 (Latest version)
+## Upgrade TTFSC to 0.6.2 updated 26/sept/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
 Update Details
-1. Solve the block jamming at certain heights
-2. Solve the repeated rollback. 
-3. Solve that blocks cannot be synchronized to the highest height due to incorrect calculation of handling fee 
-4. Solve the block replenishment failure in some cases
-5. This phase will not limit the IP address to build nodes
-6. Public Testnet
+1. Modify the synchronization algorithm to reduce node forking.
+2. Modify local block building function after broadcast to reduce network forking.
+3. Solve the problem that transactions can still be initiated when stakes and investments are insufficient in some cases.
+4. Solve the problem of failed transaction initiation due to wrong transaction time.
 
 Delete old file
 ```bash
 cd tfsc
-rm -rf ttfsc_v0.5.1_fe00dc8_devnet
+rm -rf ttfsc_v0.6.0_a318309_devnet
 rm -rf config.json
 ```
 
@@ -61,8 +59,8 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.6.0_a318309_devnet
-chmod +x ttfsc_v0.6.0_a318309_devnet
+wget -q https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.6.2_4955156_devnet
+chmod +x ttfsc_v0.6.2_4955156_devnet
 ```
 
 Setting automatically `config.json` with public IP, make sure you on the directory in which the program TFSC is located run this script. 
@@ -76,12 +74,12 @@ Running Node
 ```bash
 cd
 cd tfsc
-./ttfsc_v0.6.0_a318309_devnet -m
+./ttfsc_v0.6.2_4955156_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd tfsc
-screen -dmS tfsc bash -c './ttfsc_v0.6.0_a318309_devnet -m'
+screen -dmS tfsc bash -c './ttfsc_v0.6.2_4955156_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
