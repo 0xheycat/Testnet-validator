@@ -20,10 +20,16 @@ Automatic instalation old binnary(please skip install)
 ```bash
 wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
 ```
-## 🟢Install latest haqqd v1.0.3 Automatic (intensivitas testnet)
+## 🟢Upgrade haqqd v1.0.3 Automatic 
 ```bash
 wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
 ```
+
+## 🟢Upgrade haqqd to v1.1.0 Latest Commit (Automatic)
+```bash
+wget -O upgrade%20haqqd%20v1.1.0.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.1.0.sh && chmod +x upgrade%20haqqd%20v1.1.0.sh && ./upgrade%20haqqd%20v1.1.0.sh
+```
+
 > After complete upgrade you can following command below
 
 Make bash profile
