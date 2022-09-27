@@ -92,11 +92,11 @@ PermissionsStartOnly=true
 ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26757"
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
-ExecReload=/bin/kill -HUP $MAINPID
 LimitNOFILE=4096
 
 [Install]
 WantedBy=multi-user.target
+EOF
 
 # start service
 sudo systemctl daemon-reload
