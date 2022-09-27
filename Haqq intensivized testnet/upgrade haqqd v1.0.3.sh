@@ -75,7 +75,7 @@ sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persisten
 
 #adding addressbook
 rm $HOME/.haqqd/config/addrbook.json
-wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/addrbook.json"
+wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/addrbook/addrbook%201.0.3/addrbook.json"
 
 # create service
 sudo tee /etc/systemd/system/haqqd.service > /dev/null <<EOF
