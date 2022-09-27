@@ -68,10 +68,12 @@ sudo cp $(which mund-manager) /usr/bin
 
 # init
 mund init $NODENAME --chain-id testmun
-# seed
+
+# seed & pers
 seeds="b4eeaf7ca17e5186b181885714cedc6a78d20c9b@167.99.6.48:26656"
 sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
-
+peers="e511f0d193f9e6b52e3bbd2491073e2a8f01aa7b@198.244.202.98:26656"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.mun/config/config.toml
 #Fetch genesis
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
 
@@ -83,7 +85,8 @@ Requires=network-online.target
 After=network-online.target
 
 [Service]
-User=$USER
+User=root
+Group=root
 Restart=on-failure
 RestartSec=3
 Environment=DAEMON_NAME=mund
@@ -91,7 +94,7 @@ Environment=DAEMON_HOME=/$HOME/.mun
 Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
 Environment=DAEMON_RESTART_AFTER_UPGRADE=on
 PermissionsStartOnly=true
-ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
+ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657" --home $HOME/.mun
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
 LimitNOFILE=4096
