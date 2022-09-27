@@ -101,7 +101,7 @@ mund tx staking edit-validator \
 ```
 Unjail Validator
 ```bash
-haqqd tx slashing unjail \
+mund tx slashing unjail \
   --broadcast-mode=block \
   --from=$WALLET \
   --chain-id=testmun
