@@ -12,61 +12,14 @@ echo "==========================================================================
 
 sleep 2
 
-# set vars
-if [ ! $NODENAME ]; then
-	read -p "Validator Name: " NODENAME
-	echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
-fi
-if [ ! $WALLET ]; then
-	echo "export WALLET=wallet" >> $HOME/.bash_profile
-fi
-echo "export HAQQ_CHAIN_ID=haqq_54211-2" >> $HOME/.bash_profile
-source $HOME/.bash_profile
-
-echo '================================================='
-echo -e "Your node name: \e[1m\e[32m$NODENAME\e[0m"
-echo -e "Your wallet name: \e[1m\e[32m$WALLET\e[0m"
-echo -e "Your chain name: \e[1m\e[32m$HAQQ_CHAIN_ID\e[0m"
-echo '================================================='
-sleep 2
-
-echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
-# update
-sudo apt update && sudo apt upgrade -y
-
-echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
-# packages
-sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
-
-# install go
-ver="1.18.3"
-wget https://golang.org/dl/go1.18.3.linux-amd64.tar.gz; \
-rm -rv /usr/local/go; \
-tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz && \
-rm -v go1.18.3.linux-amd64.tar.gz && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-source ~/.bash_profile && \
-go version > /dev/null
-
-echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
-
-# download binary
+# Upgrade binary
+sudo systemctl stop haqqd
+cd || return
 cd $HOME && rm $HOME/haqq -rf
 git clone https://github.com/haqq-network/haqq.git && cd haqq
 git checkout v1.1.0
 make install 
 
-# config
-haqqd config chain-id $HAQQ_CHAIN_ID
-haqqd config keyring-backend test
-
-# init
-haqqd init $NODENAME --chain-id haqq_54211-2 && \
-haqqd config chain-id haqq_54211-2
-
-# remove & download genesis
-rm -rf $HOME/.haqqd/config/genesis.json && cd $HOME/.haqqd/config/ && wget https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/genesis.json
-haqqd validate-genesis
 
 # updating seed & peers
 seeds="62bf004201a90ce00df6f69390378c3d90f6dd7e@seed2.testedge2.haqq.network:26656,23a1176c9911eac442d6d1bf15f92eeabb3981d5@seed1.testedge2.haqq.network:26656"
@@ -77,23 +30,6 @@ sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persisten
 #adding addressbook
 rm $HOME/.haqqd/config/addrbook.json
 wget -O $HOME/.haqqd/config/addrbook.json "https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/addrbook.json"
-
-# create service
-sudo tee /etc/systemd/system/haqqd.service > /dev/null <<EOF
-[Unit]
-Description=Haqq Node
-After=network.target
-
-[Service]
-User=$USER
-Type=simple
-ExecStart=$(which haqqd) start
-Restart=on-failure
-LimitNOFILE=65535
-
-[Install]
-WantedBy=multi-user.target
-EOF
 
 # start service
 sudo systemctl daemon-reload
