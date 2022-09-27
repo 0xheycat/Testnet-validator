@@ -52,8 +52,7 @@ go version
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 # download binary
 cd $HOME
-git clone https://github.com/munblockchain/mun
-cd mun
+git clone https://github.com/munblockchain/mun && cd mun
 sudo rm -rf ~/.mun
 go mod tidy
 make install
@@ -72,6 +71,7 @@ mund init $NODENAME --chain-id testmun
 # seed
 seeds="b4eeaf7ca17e5186b181885714cedc6a78d20c9b@167.99.6.48:26656"
 sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
+
 #Fetch genesis
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
 
@@ -91,7 +91,7 @@ Environment=DAEMON_HOME=/$HOME/.mun
 Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
 Environment=DAEMON_RESTART_AFTER_UPGRADE=on
 PermissionsStartOnly=true
-ExecStart=$(which mund-manager) start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26757"
+ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
 LimitNOFILE=4096
