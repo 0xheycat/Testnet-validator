@@ -34,6 +34,7 @@ sudo tail -f /root/massa/massa-node/logs.txt
 * Add custom port setup the firewall on your computer to allow incoming TCP connections on ports 31244 and 31245
 ```bash
 ufw allow 31244 && ufw allow 31245
+ufw allow 22
 sudo ufw allow 31244/tcp
 sudo ufw allow 31245/tcp
 sudo ufw enable
