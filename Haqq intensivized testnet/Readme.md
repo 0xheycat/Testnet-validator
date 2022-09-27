@@ -25,7 +25,7 @@ wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/mai
 wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
 ```
 
-## 🟢Upgrade haqqd to v1.1.0 Latest Commit (Automatic)
+## 🟢Upgrade haqqd to v1.1.0 Latest Commit (Automatic) UPGRADE to "v1.1.0" NEEDED at height: 256200
 ```bash
 wget -O upgrade%20haqqd%20v1.1.0.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.1.0.sh && chmod +x upgrade%20haqqd%20v1.1.0.sh && ./upgrade%20haqqd%20v1.1.0.sh
 ```
