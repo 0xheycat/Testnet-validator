@@ -73,16 +73,13 @@ mund init $NODENAME --chain-id testmun
 #Fetch genesis
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
 
-# update seed
-seeds = "b4eeaf7ca17e5186b181885714cedc6a78d20c9b@167.99.6.48:26656"
-sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
-
 # create service
 sudo tee /etc/systemd/system/mund.service > /dev/null <<EOF
 [Unit]
 Description=mund
 Requires=network-online.target
 After=network-online.target
+
 [Service]
 User=$USER
 Restart=on-failure
@@ -95,7 +92,9 @@ PermissionsStartOnly=true
 ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26757"
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
+ExecReload=/bin/kill -HUP $MAINPID
 LimitNOFILE=4096
+
 [Install]
 WantedBy=multi-user.target
 
@@ -105,5 +104,4 @@ sudo systemctl enable mund
 sudo systemctl restart mund
 
 echo '=============== SETUP FINISHED ==================='
-echo -e 'To check logs: \e[1m\e[32msudo journalctl -u mund -f -o cat\e[0m'
-echo -e "To check sync status: \e[1m\e[32mmund status 2>&1 | jq .SyncInfo\e[0m" && sleep 1
+echo -e 'To check logs: \e[1m\e[32msudo journalctl -u mund -f -o cat\e[0m' && sleep 1
