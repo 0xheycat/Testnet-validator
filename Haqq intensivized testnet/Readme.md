@@ -126,10 +126,7 @@ haqqd tx staking edit-validator \
 ```
 Unjail Validator
 ```bash
-haqqd tx slashing unjail \
-  --broadcast-mode=block \
-  --from=$WALLET \
-  --chain-id=$HAQQ_CHAIN_ID
+haqqd tx slashing unjail --from wallet --chain-id haqq_54211-2 --gas-prices 0.1aISLM --gas-adjustment 1.5 --gas auto -y
 ```
 Delegate and Stake to your Validator
 ```bash
