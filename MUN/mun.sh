@@ -39,9 +39,15 @@ echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 sudo apt install -y curl git jq lz4 build-essential unzip
 
 # install dependencies, if needed
-if [ ! -f "/usr/local/go/bin/go" ]; then
-  bash <(curl -s "https://raw.githubusercontent.com/nodejumper-org/cosmos-scripts/master/utils/go_install.sh")
-  source .bash_profile
+if ! [ -x "$(command -v go)" ]; then
+  ver="1.18.2"
+  cd $HOME
+  wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+  sudo rm -rf /usr/local/go
+  sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+  rm "go$ver.linux-amd64.tar.gz"
+  echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile
+  source ~/.bash_profile
 fi
 
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
