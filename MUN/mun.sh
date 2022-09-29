@@ -36,17 +36,13 @@ sudo apt update && sudo apt upgrade -y
 
 echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 # packages
-sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
+sudo apt install -y curl git jq lz4 build-essential unzip
 
-# install go
-ver="1.18.3"
-wget https://golang.org/dl/go1.18.3.linux-amd64.tar.gz; \
-rm -rv /usr/local/go; \
-tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz && \
-rm -v go1.18.3.linux-amd64.tar.gz && \
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
-source ~/.bash_profile && \
-go version > /dev/null
+# install dependencies, if needed
+if [ ! -f "/usr/local/go/bin/go" ]; then
+  bash <(curl -s "https://raw.githubusercontent.com/nodejumper-org/cosmos-scripts/master/utils/go_install.sh")
+  source .bash_profile
+fi
 
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 # download binary
@@ -92,8 +88,8 @@ Requires=network-online.target
 After=network-online.target
 
 [Service]
-User=$HOME
-Group=$HOME
+User=root
+Group=root
 Restart=on-failure
 RestartSec=3
 Environment=DAEMON_NAME=mund
@@ -101,7 +97,7 @@ Environment=DAEMON_HOME=/$HOME/.mun
 Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
 Environment=DAEMON_RESTART_AFTER_UPGRADE=on
 PermissionsStartOnly=true
-ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657" --home $HOME/.mun
+ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
 ExecReload=/bin/kill -HUP $MAINPID
