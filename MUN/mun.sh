@@ -81,11 +81,6 @@ sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
 peers="e511f0d193f9e6b52e3bbd2491073e2a8f01aa7b@198.244.202.98:26656"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.mun/config/config.toml
 
-# custom pruning
-sed -i 's|pruning = "default"|pruning = "custom"|g' $HOME/.mun/config/app.toml
-sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.mun/config/app.toml
-sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.mun/config/app.toml
-
 # create service
 sudo tee /etc/systemd/system/mund.service > /dev/null << EOF
 [Unit]
@@ -103,7 +98,7 @@ Environment=DAEMON_HOME=/$HOME/.mun
 Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
 Environment=DAEMON_RESTART_AFTER_UPGRADE=on
 PermissionsStartOnly=true
-ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
+ExecStart=/root/go/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
 ExecReload=/bin/kill -HUP $MAINPID
