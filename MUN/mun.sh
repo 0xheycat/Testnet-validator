@@ -50,25 +50,25 @@ sudo rm -rf ~/.mun
 go mod tidy
 make install
 
-clear
-
 mkdir -p ~/.mun/upgrade_manager/upgrades
 mkdir -p ~/.mun/upgrade_manager/genesis/bin
+
+#Fetch genesis
+curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
+
+# init
+mund init $NODENAME --chain-id testmun && \
+mund config chain-id testmun
 
 # genesys update
 cp $(which mund) ~/.mun/upgrade_manager/genesis/bin
 sudo cp $(which mund-manager) /usr/bin
-
-# init
-mund init $NODENAME --chain-id testmun
 
 # seed & pers
 seeds="b4eeaf7ca17e5186b181885714cedc6a78d20c9b@167.99.6.48:26656"
 sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
 peers="e511f0d193f9e6b52e3bbd2491073e2a8f01aa7b@198.244.202.98:26656"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.mun/config/config.toml
-#Fetch genesis
-curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
 
 # create service
 sudo tee /etc/systemd/system/mund.service > /dev/null << EOF
