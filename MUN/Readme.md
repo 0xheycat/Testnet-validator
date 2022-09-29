@@ -161,7 +161,7 @@ sudo systemctl stop mund
 sudo systemctl disable mund
 sudo rm /etc/systemd/system/mun* -rf
 sudo rm $(which mun) -rf
-sudo rm $HOME/.mun* -rf
+sudo rm $HOME/.mun -rf
 sudo rm $HOME/mun -rf
 sed -i '/MUN_/d' ~/.bash_profile
 ```
