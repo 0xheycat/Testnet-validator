@@ -44,14 +44,17 @@ source ~/.profile
 
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 # download binary
-cd $HOME
+cd $HOME && rm $HOME/mun -rf
 git clone https://github.com/munblockchain/mun && cd mun
-sudo rm -rf ~/.mun
 go mod tidy
 make install
 
 mkdir -p ~/.mun/upgrade_manager/upgrades
 mkdir -p ~/.mun/upgrade_manager/genesis/bin
+
+# config
+mund config chain-id $MUN_CHAIN_ID
+mund config keyring-backend test
 
 #Fetch genesis
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
@@ -69,6 +72,11 @@ seeds="b4eeaf7ca17e5186b181885714cedc6a78d20c9b@167.99.6.48:26656"
 sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
 peers="e511f0d193f9e6b52e3bbd2491073e2a8f01aa7b@198.244.202.98:26656"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.mun/config/config.toml
+
+# custom pruning
+sed -i 's|pruning = "default"|pruning = "custom"|g' $HOME/.mund/config/app.toml
+sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.mund/config/app.toml
+sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.mund/config/app.toml
 
 # create service
 sudo tee /etc/systemd/system/mund.service > /dev/null << EOF
@@ -90,6 +98,8 @@ PermissionsStartOnly=true
 ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657" --home $HOME/.mun
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
 LimitNOFILE=4096
 
 [Install]
