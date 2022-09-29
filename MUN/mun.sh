@@ -36,11 +36,17 @@ sudo apt update && sudo apt upgrade -y
 
 echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 # packages
-sudo apt install build-essential jq -y
+sudo apt install curl build-essential git wget jq make gcc tmux chrony -y
 
 # install go
-wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.18
-source ~/.profile
+ver="1.18.3"
+wget https://golang.org/dl/go1.18.3.linux-amd64.tar.gz; \
+rm -rv /usr/local/go; \
+tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz && \
+rm -v go1.18.3.linux-amd64.tar.gz && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
+source ~/.bash_profile && \
+go version > /dev/null
 
 echo -e "\e[1m\e[32m3. Downloading and building binaries... \e[0m" && sleep 1
 # download binary
@@ -86,8 +92,8 @@ Requires=network-online.target
 After=network-online.target
 
 [Service]
-User=root
-Group=root
+User=$HOME
+Group=$HOME
 Restart=on-failure
 RestartSec=3
 Environment=DAEMON_NAME=mund
