@@ -80,9 +80,9 @@ peers="e511f0d193f9e6b52e3bbd2491073e2a8f01aa7b@198.244.202.98:26656"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.mun/config/config.toml
 
 # custom pruning
-sed -i 's|pruning = "default"|pruning = "custom"|g' $HOME/.mund/config/app.toml
-sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.mund/config/app.toml
-sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.mund/config/app.toml
+sed -i 's|pruning = "default"|pruning = "custom"|g' $HOME/.mun/config/app.toml
+sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.mun/config/app.toml
+sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.mun/config/app.toml
 
 # create service
 sudo tee /etc/systemd/system/mund.service > /dev/null << EOF
@@ -118,3 +118,4 @@ sudo systemctl enable mund
 sudo systemctl restart mund
 
 echo '=============== SETUP FINISHED ==================='
+echo -e 'To check logs: \e[1m\e[32msudo journalctl -u mund -f -o cat\e[0m'
