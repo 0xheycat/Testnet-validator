@@ -46,15 +46,17 @@ Update Details
 3. Improved synchronization algorithm to improve efficiency.
 4. The number of transaction fees has been lowered
 
-🧭 additional Instructions: 
-❶ Back up and keep the previous private key file (CERT file) safe before updating. 
-❷ Create a new directory and copy the program (ttfs_v0.7.0_61ec7b1_devnet) to this directory.
+## additional Instructions: 
 
-Delete old file
+❶ Back up and keep the previous private key file `CERT` on safe place before updating. you can find your previous cert file directory `$HOME/tfsc/cert`
+
+
+Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
 rm -rf ttfsc_v0.6.2_4955156_devnet
 rm -rf config.json
+rm -rf cert/
 ```
 
 Make new Folder
