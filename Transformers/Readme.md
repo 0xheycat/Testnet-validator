@@ -19,13 +19,6 @@ welcome to Transformer testnet
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-* **Allow port 22 and 41516**
-```bash
-ufw allow 22
-ufw allow 41516
-sudo ufw allow 41516/tcp
-sudo ufw enable
-```
 
 * **Install firewall**
 ```bash
@@ -36,19 +29,31 @@ apt install firewalld -y
 systemctl restart firewalld
 ```
 
-## Upgrade TTFSC to 0.6.2 updated 26/sept/2022 (Latest version)
+* **Allow port 22 and 41516**
+```bash
+ufw allow 22
+ufw allow 41516
+sudo ufw allow 41516/tcp
+sudo ufw enable
+```
+
+## Upgrade TTFSC to v0.7.0 updated 29/sept/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
 Update Details
-1. Modify the synchronization algorithm to reduce node forking.
-2. Modify local block building function after broadcast to reduce network forking.
-3. Solve the problem that transactions can still be initiated when stakes and investments are insufficient in some cases.
-4. Solve the problem of failed transaction initiation due to wrong transaction time.
+1. Use ED25519 as the primary key.
+2. The amount of staking is now 5000 and needs to be staked all at once
+3. Improved synchronization algorithm to improve efficiency.
+4. The number of transaction fees has been lowered
+
+🧭 additional Instructions: 
+❶ Back up and keep the previous private key file (CERT file) safe before updating. 
+❷ Create a new directory and copy the program (ttfs_v0.7.0_61ec7b1_devnet) to this directory.
 
 Delete old file
 ```bash
 cd tfsc
-rm -rf ttfsc_v0.6.0_a318309_devnet
+rm -rf ttfsc_v0.6.2_4955156_devnet
 rm -rf config.json
 ```
 
@@ -59,11 +64,16 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://fastcdn.uscloudmedia.com/transformers/test/ttfsc_v0.6.2_4955156_devnet
-chmod +x ttfsc_v0.6.2_4955156_devnet
+wget -q  https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/ttfs_v0.7.0_61ec7b1_devnet
+chmod +x ttfs_v0.7.0_61ec7b1_devnet
 ```
 
-Setting automatically `config.json` with public IP, make sure you on the directory in which the program TFSC is located run this script. 
+init config file, will generate new `config.json`
+```bash
+./ttfs_v0.7.0_61ec7b1_devnet -c
+```
+
+Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
 ```bash
 cd
 cd tfsc
@@ -74,12 +84,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./ttfsc_v0.6.2_4955156_devnet -m
+./ttfs_v0.7.0_61ec7b1_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
+cd
 cd tfsc
-screen -dmS tfsc bash -c './ttfsc_v0.6.2_4955156_devnet -m'
+screen -dmS tfsc bash -c './ttfs_v0.7.0_61ec7b1_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
