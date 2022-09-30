@@ -64,16 +64,16 @@ mkdir -p ~/.mun/upgrade_manager/genesis/bin
 mund config chain-id $MUN_CHAIN_ID
 mund config keyring-backend test
 
+# genesys update
+cp $(which mund) ~/.mun/upgrade_manager/genesis/bin
+sudo cp $(which mund-manager) /usr/bin
+
 #Fetch genesis
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
 
 # init
 mund init $NODENAME --chain-id testmun && \
 mund config chain-id testmun
-
-# genesys update
-cp $(which mund) ~/.mun/upgrade_manager/genesis/bin
-sudo cp $(which mund-manager) /usr/bin
 
 # seed & pers
 seeds="b4eeaf7ca17e5186b181885714cedc6a78d20c9b@167.99.6.48:26656"
@@ -98,7 +98,7 @@ Environment=DAEMON_HOME=/$HOME/.mun
 Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
 Environment=DAEMON_RESTART_AFTER_UPGRADE=on
 PermissionsStartOnly=true
-ExecStart=/root/go/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
+ExecStart=$HOME/go/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
 StandardOutput=file:/var/log/mund/mund.log
 StandardError=file:/var/log/mund/mund_error.log
 ExecReload=/bin/kill -HUP $MAINPID
@@ -112,6 +112,7 @@ EOF
 # start service
 sudo systemctl daemon-reload
 sudo systemctl enable mund
+sudo systemctl start mund
 sudo systemctl restart mund
 
 echo '=============== SETUP FINISHED ==================='
