@@ -49,22 +49,12 @@ do
 if [ ! -e $SERVICE status 2>&1 | jq .SyncInfo ]; then
   echo "Your NODE is Running Well";
 fi
-chmod +x $HOME/autoclaim%26redelegate.sh
-claim=$SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y
-if [ $claim ]; then
-        resp=$($SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y )
-        echo $resp
-fi
-commision=$SERVICE tx distribution withdraw-rewards $VALOPER --from=$ADDRESS --commission --chain-id=$CHAIN -y
-if [ $commision ]; then
-        resp2=$($SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y )
-        echo $resp2
-fi
-delegate=$SERVICE tx staking delegate $VALOPER 500000000000 $TOKEN --from=$ADDRESS --chain-id=$CHAIN -y
-if [ $delegate ]; then
-        resp3=$($SERVICE tx staking delegate $VALOPER 500000000000 $TOKEN --from=$ADDRESS --chain-id=$CHAIN -y )
-        echo $resp3
-fi
+$SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y
+sleep 1
+$SERVICE tx distribution withdraw-rewards $VALOPER --from=$ADDRESS --commission --chain-id=$CHAIN -y
+sleep 1
+$SERVICE tx staking delegate $VALOPER 500000000000 $TOKEN --from=$ADDRESS --chain-id=$CHAIN -y
+
 
 printf "sleep"
          for((sec=0; sec<60; sec++))
