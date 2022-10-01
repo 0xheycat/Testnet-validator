@@ -76,3 +76,6 @@ printf "sleep"
                 sleep 1
          done
          printf "\n"
+done
+echo '=============== install FINISHED ==================='
+echo -e 'To close logs: \e[1m\e[32mpress CTRL+A+D\e[0m' && sleep 1
