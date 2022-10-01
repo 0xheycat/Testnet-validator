@@ -12,26 +12,20 @@ echo "==========================================================================
 sleep 2
 
 # set your Automatic claim staking reward
-if [ ! $NODE ]; then
+
 read -p "Input your Validator name: " NODE
 echo 'export NODE='\"${NODE}\" >> $HOME/.bash_profile
-if [ ! $ADDRESS ]; then
 read -p "Input your wallet address: " ADDRESS
 echo 'export ADDRESS='\"${ADDRESS}\" >> $HOME/.bash_profile
-if [ ! $VALOPER ]; then
 read -p "Input your Validator address : " VALOPER
 echo 'export VALOPER='\"${VALOPER}\" >> $HOME/.bash_profile
-if [ ! $CHAIN ]; then
 read -p "Input your Chain ID,ex chain for HAQQ is haqq_54211-2 : " CHAIN
 echo 'export CHAIN='\"${CHAIN}\" >> $HOME/.bash_profile
-if [ ! $TOKEN ]; then
 read -p "Input your Token name,ex= usei for SEI,aISLM for HAQQ : " TOKEN
 echo 'export TOKEN='\"${TOKEN}\" >> $HOME/.bash_profile
-if [ ! $SERVICE ]; then
 read -p "Input Service NAME your NODE Testnet,ex haqqd,seid,mund,masad : " SERVICE
 echo 'export SERVICE='\"${SERVICE}\" >> $HOME/.bash_profile
 
-fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 . $HOME/.bash_profile
 
