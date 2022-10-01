@@ -45,9 +45,7 @@ echo -e "Your Service NODE: \e[1m\e[32m$SERVICE\e[0m"
 echo '================================================='
 sleep 1
 
-
-do
-
+#Instalation
 if [ ! -e $SERVICE status 2>&1 | jq .SyncInfo ]; then
   echo "Your NODE is Running Well";
 fi
