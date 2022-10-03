@@ -12,19 +12,18 @@ echo "==========================================================================
 sleep 2
 
 # set your Automatic claim staking reward
-
 read -p "Input your Validator name: " NODE
-echo 'export NODE='\"${NODE}\" >> $HOME/.bash_profile
 read -p "Input your wallet address: " ADDRESS
-echo 'export ADDRESS='\"${ADDRESS}\" >> $HOME/.bash_profile
 read -p "Input your Validator address : " VALOPER
-echo 'export VALOPER='\"${VALOPER}\" >> $HOME/.bash_profile
 read -p "Input your Chain ID,ex chain for HAQQ is haqq_54211-2 : " CHAIN
-echo 'export CHAIN='\"${CHAIN}\" >> $HOME/.bash_profile
-read -p "Input your Token name,ex= usei for SEI,aISLM for HAQQ : " TOKEN
-echo 'export TOKEN='\"${TOKEN}\" >> $HOME/.bash_profile
+read -p "Input your Token name,ex usei for SEI,aISLM for HAQQ : " TOKEN
 read -p "Input Service NAME your NODE Testnet,ex haqqd,seid,mund,masad : " SERVICE
+echo 'export NODE='\"${NODE}\" >> $HOME/.bash_profile
 echo 'export SERVICE='\"${SERVICE}\" >> $HOME/.bash_profile
+echo 'export TOKEN='\"${TOKEN}\" >> $HOME/.bash_profile
+echo 'export ADDRESS='\"${ADDRESS}\" >> $HOME/.bash_profile
+echo 'export VALOPER='\"${VALOPER}\" >> $HOME/.bash_profile
+echo 'export CHAIN='\"${CHAIN}\" >> $HOME/.bash_profile
 
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 . $HOME/.bash_profile
@@ -39,22 +38,35 @@ echo -e "Your Service NODE: \e[1m\e[32m$SERVICE\e[0m"
 echo '================================================='
 sleep 1
 
-declare -i int_balance
+declare -i status
 declare -i lc
 
 while true
 do
 
-#Instalation
-if [ ! -e $SERVICE status 2>&1 | jq .SyncInfo ]; then
-  echo "Your NODE is Running Well";
+if [ ! -e $HOME/.haqqd/keyring-test/ ]; then
+  echo "Wallet found";
 fi
-$SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y
+cd $HOME
+wallet_temp=$(haqqd keys show wallet)
+wallet=${wallet_temp:9}
+echo $wallet_temp;
+if [ ! "$wallet" ];then
+   echo "Wallet not found. Please check again";
+fi
+commision=$($SERVICE tx distribution withdraw-rewards $VALOPER --from=$ADDRESS --commission --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $3 }')
+echo "commision is: " $commision;
 sleep 1
-$SERVICE tx distribution withdraw-rewards $VALOPER --from=$ADDRESS --commission --chain-id=$CHAIN -y
-sleep 1
-$SERVICE tx staking delegate $VALOPER 500000000000 $TOKEN --from=$ADDRESS --chain-id=$CHAIN -y
 
+reward=$($SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $3 }')
+echo "reward is: " $reward;
+sleep 1
+
+balance=$($SERVICE query bank balances $ADDRESS | grep "amount" | awk '{ print $3 }')
+echo "Balance is: " $balance;
+status=$($SERVICE tx staking delegate $VALOPER 1000$TOKEN --from=$ADDRESS --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $3 }')
+echo "txhash is: " $status;
+sleep 1
 
 printf "sleep"
          for((sec=0; sec<60; sec++))
@@ -63,6 +75,4 @@ printf "sleep"
                 sleep 1
          done
          printf "\n"
-done
-echo '=============== install FINISHED ==================='
-echo -e 'To close logs: \e[1m\e[32mpress CTRL+A+D\e[0m' && sleep 1
+ done
