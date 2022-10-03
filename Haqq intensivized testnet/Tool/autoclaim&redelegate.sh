@@ -44,11 +44,11 @@ declare -i lc
 while true
 do
 
-if [ ! -e $HOME/.haqqd/keyring-test/ ]; then
+if [ ! -e $HOME/ ]; then
   echo "Wallet found";
 fi
 cd $HOME
-wallet_temp=$(haqqd keys show wallet)
+wallet_temp=$($SERVICE keys show wallet)
 wallet=${wallet_temp:9}
 echo $wallet_temp;
 if [ ! "$wallet" ];then
