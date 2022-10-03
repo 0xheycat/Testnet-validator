@@ -16,7 +16,7 @@ read -p "Input your Validator name: " NODE
 read -p "Input your wallet address: " ADDRESS
 read -p "Input your Validator address : " VALOPER
 read -p "Input your Chain ID,ex chain for HAQQ is haqq_54211-2 : " CHAIN
-read -p "Input your Token name,ex usei for SEI,aISLM for HAQQ : " TOKEN
+read -p "Input your Token name,ex uSEI for SEI,aISLM for HAQQ : " TOKEN
 read -p "Input Service NAME your NODE Testnet,ex haqqd,seid,mund,masad : " SERVICE
 echo 'export NODE='\"${NODE}\" >> $HOME/.bash_profile
 echo 'export SERVICE='\"${SERVICE}\" >> $HOME/.bash_profile
