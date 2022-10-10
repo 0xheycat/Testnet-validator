@@ -31,15 +31,12 @@ echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 echo '================================================='
 echo -e "Your Validator Name: \e[1m\e[32m$VALOPER\e[0m"
 echo -e "Your Wallet Address: \e[1m\e[32m$ADDRESS\e[0m"
-echo -e "Your Token Name: \e[1m\e[32m$ADDRESS\e[0m"
+echo -e "Your Token Name: \e[1m\e[32m$TOKEN\e[0m"
 echo -e "Your Validator Address: \e[1m\e[32m$VALOPER\e[0m"
 echo -e "Your chain name: \e[1m\e[32m$CHAIN\e[0m"
 echo -e "Your Service NODE: \e[1m\e[32m$SERVICE\e[0m"
 echo '================================================='
 sleep 1
-
-declare -i status
-declare -i lc
 
 while true
 do
@@ -54,18 +51,19 @@ echo $wallet_temp;
 if [ ! "$wallet" ];then
    echo "Wallet not found. Please check again";
 fi
-commision=$($SERVICE tx distribution withdraw-rewards $VALOPER --from=$ADDRESS --commission --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $3 }')
-echo "commision is: " $commision;
-sleep 1
+commision=$($SERVICE tx distribution withdraw-rewards $VALOPER --from=$ADDRESS --commission --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $0 }')
+echo "claimed : " $commision;
+sleep 30
 
-reward=$($SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $3 }')
-echo "reward is: " $reward;
-sleep 1
+reward=$($SERVICE tx distribution withdraw-all-rewards --from=$ADDRESS --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $0 }')
+echo "claimed: " $reward;
+sleep 30
 
-balance=$($SERVICE query bank balances $ADDRESS | grep "amount" | awk '{ print $3 }')
-echo "Balance is: " $balance;
-status=$($SERVICE tx staking delegate $VALOPER 1000$TOKEN --from=$ADDRESS --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $3 }')
-echo "txhash is: " $status;
+balance=$($SERVICE query bank balances $ADDRESS | grep amount | awk '{split($0,a,"\""); print a[2]}')
+AMOUNT=$balance"$TOKEN"
+echo -e "Balance is: \033[0;32m$AMOUNT\033[0m";
+status=$($SERVICE tx staking delegate $VALOPER 10000000000$TOKEN --from=$ADDRESS --chain-id=$CHAIN -y | grep "txhash" | awk '{ print $0 }')
+echo -e "STAKED: \033[0;32m$status\033[0m";
 sleep 1
 
 printf "sleep"
