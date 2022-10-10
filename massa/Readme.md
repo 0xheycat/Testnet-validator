@@ -4,17 +4,16 @@
 * [Discord](https://discord.gg/massa/)
 * [Testnet Explorer](https://massa.net/testnet/#wallet)
 
-## 1.2 Hardware requirements：
+##  Hardware requirements：
 * CPU: Recommend for ubuntu 20.4 , core number 4 core and above.
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## Information testnet Massa 14.7
-* TEST.14.7 is now running and registrations are open.
-* Scoring will start at cycle 88, on Friday, September 23 2022, 12:03 UTC
-* Scoring will end at cycle 373, on Friday, September 30 2022, 06:11 UTC
+## Information testnet Massa 15.1
+* TEST.15.1 is now running and registrations will open soon, wait announcement.
+* Test 14.7 closed 
 
-## 1.3 Installation massa 14.7 Automatic (Latest version)
+##  Installation massa 15.1 Automatic (Latest version)
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
