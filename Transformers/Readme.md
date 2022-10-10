@@ -37,15 +37,11 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.8.0 updated 30/sept/2022 (Latest version)
+## Upgrade TTFSC to v0.8.1 updated 10/oct/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
 Update Details
-1. Added the verification of initial data during startup
-2. Optimized the node synchronization algorithm to reduce the impact of faulty data nodes
-3. Modified some interfaces.
-4. Resolved the problem that a node can register with itself
-5. Resolved memory leaks problem
+1. Solved the crash problem caused by synchronization
 
 ## additional Instructions: 
 
@@ -55,7 +51,7 @@ Update Details
 Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
-rm -rf ttfs_v0.7.0_61ec7b1_devnet
+rm -rf ttfs_v0.8.0_76a6414_devnet
 rm -rf config.json
 rm -rf cert/
 ```
@@ -67,13 +63,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q  https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/ttfs_v0.8.0_76a6414_devnet
-chmod +x ttfs_v0.8.0_76a6414_devnet
+wget -q  https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/ttfs_v0.8.1_003950f_devnet
+chmod +x ttfs_v0.8.1_003950f_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./ttfs_v0.8.0_76a6414_devnet -c
+./ttfs_v0.8.1_003950f_devnet -c
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -87,13 +83,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./ttfs_v0.8.0_76a6414_devnet -m
+./ttfs_v0.8.1_003950f_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './ttfs_v0.8.0_76a6414_devnet -m'
+screen -dmS tfsc bash -c './ttfs_v0.8.1_003950f_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
@@ -132,7 +128,7 @@ rm -rf data.db
 ```
 Download the file
 ```bash
-wget -O data.db.tar fastcdn.uscloudmedia.com/transformers/db/data.db.67148.tar
+wget -O data.db.tar https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/db/data.29004.tar.gz
 ```
 Extract new db
 ```bash
