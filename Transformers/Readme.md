@@ -53,7 +53,6 @@ Delete old file, make sure you backup your previous cert file
 cd tfsc
 rm -rf ttfs_v0.8.0_76a6414_devnet
 rm -rf config.json
-rm -rf cert/
 ```
 
 Make new Folder
