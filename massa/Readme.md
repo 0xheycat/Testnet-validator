@@ -10,8 +10,8 @@
 * Disk: Recommend 200 GB Disk
 
 ## Information testnet Massa 15.1
-* TEST.15.1 is now running and registrations will open soon, wait announcement.
-* Test 14.7 closed 
+* TEST.15.1 is now running .
+* Scoring will start on October 13, 10.59 PM UTC
 
 ##  Installation massa 15.1 Automatic (Latest version)
 ```bash
