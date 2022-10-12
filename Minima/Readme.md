@@ -9,7 +9,7 @@
 ## Installation
 
 ```bash
-wget -O minima_setup.sh https://raw.githubusercontent.com/minima-global/Minima/master/scripts/minima_setup.sh && chmod +x minima_setup.sh && sudo ./minima_setup.sh -p 9001 -r 9002
+wget -O minima_setup.sh https://raw.githubusercontent.com/minima-global/Minima/master/scripts/minima_setup.sh && chmod +x minima_setup.sh && sudo ./minima_setup.sh -r 9002 -p 9001
 ```
 > Wait for Minima to start, this can take up to 30 minutes and Minima will restart during the process
 > When you see the log message below, Minima has started and synced to the chain. `[+] Connected to the blockchain Initial Block Download received`.
