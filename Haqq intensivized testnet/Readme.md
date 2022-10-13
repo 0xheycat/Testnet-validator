@@ -15,6 +15,20 @@
 ## 1.2 Register intensivized Testnet 
 https://haqq-network.typeform.com/to/zEgmX3TO
 
+## 🚨 Update Genesis HAQQ 54211-3
+```bash
+wget -O Genesis%20update%20haqq_54211-3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/Genesis%20update%20haqq_54211-3.sh && chmod +x Genesis%20update%20haqq_54211-3.sh && ./Genesis%20update%20haqq_54211-3.sh
+```
+Please Disable `state-sync` in `$HOME/.haqqd/config/config.toml`
+
+```bash
+sudo nano $HOME/.haqqd/config/config.toml
+```
+Change the `enable` parameter to `false`
+![Screenshot_28](https://user-images.githubusercontent.com/81378817/195663213-5a66456d-bad7-403e-b85b-cdaf3168da41.jpg)
+
+save with press `CTRL+X` and yes
+
 ## Instalation 
 Automatic instalation old binnary(please skip install)
 ```bash
@@ -128,14 +142,14 @@ haqqd tx staking edit-validator \
 --moniker="<Yournodename>" \
 --identity="<your_keybase_id>" \
 --details="<your_validator_description>" \
---chain-id=haqq_54211-2 \
+--chain-id=haqq_54211-3 \
 --from=$WALLET \
 --gas=auto \
 -y 
 ```
 Unjail Validator
 ```bash
-haqqd tx slashing unjail --from wallet --chain-id haqq_54211-2 --gas-prices 0.1aISLM --gas-adjustment 1.5 --gas auto -y
+haqqd tx slashing unjail --from wallet --chain-id haqq_54211-3 --gas-prices 0.1aISLM --gas-adjustment 1.5 --gas auto -y
 ```
 Delegate and Stake to your Validator
 ```bash
