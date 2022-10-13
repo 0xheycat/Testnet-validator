@@ -31,7 +31,7 @@ if [ ! "$wallet" ];then
    echo "Wallet not found. Please check again";
 fi
 
-balance=$(./massa-client wallet_info -p $PASSWORD | grep "Final balance" | awk '{ print $3 }')
+balance=$(./massa-client wallet_info -p $PASSWORD | grep "Balance: final" | awk '{ print $3 }')
 echo "Balance is: " $balance;
 int_balance=${balance/\.*}
 if [ $int_balance -gt "99" ]; then
