@@ -17,6 +17,9 @@ sudo systemctl stop haqqd
 cd || return
 cd $HOME/.haqqd/config && rm -rf genesis.json && wget https://github.com/haqq-network/validators-contest/raw/master/genesis.json
 
+# Execute unsafe-reset-all
+haqqd tendermint unsafe-reset-all --home=$HOME/.haqqd
+
 # Update chain
 haqqd config chain-id haqq_54211-3
 
