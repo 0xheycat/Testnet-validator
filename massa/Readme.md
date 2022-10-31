@@ -13,7 +13,7 @@
 * TEST.15.1 is now running .
 * Scoring will start on October 13, 10.59 PM UTC
 
-##  Installation massa 16 Automatic (Latest version)
+##  Installation massa 16 Automatic (Latest version) 31.10.2022
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
