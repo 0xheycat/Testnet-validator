@@ -9,11 +9,11 @@
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## Information testnet Massa 15.1
+## Information testnet Massa 16
 * TEST.15.1 is now running .
 * Scoring will start on October 13, 10.59 PM UTC
 
-##  Installation massa 15.1 Automatic (Latest version)
+##  Installation massa 16 Automatic (Latest version)
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
