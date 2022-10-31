@@ -10,8 +10,8 @@
 * Disk: Recommend 200 GB Disk
 
 ## Information testnet Massa 16
-* TEST.15.1 is now running .
-* Scoring will start on October 13, 10.59 PM UTC
+The scoring will start at cycle 121, on Thursday, November 03 2022, 20:50 UTC
+The scoring will end at cycle 1197, on Tuesday, November 29 2022, 08:57 UTC
 
 ##  Installation massa 16 Automatic (Latest version) 31.10.2022
 ```bash
