@@ -31,7 +31,7 @@ sleep 1
 rm -rf massa
 rm -rf massa-test.sh
 rm -rf massa-testnet.sh
-rm -rf massa_TEST.14.7_release_linux.tar.gz
+rm -rf massa_TEST.15.1_release_linux.tar.gz
 
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
 # update
@@ -46,11 +46,11 @@ echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
 sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
 sudo apt-get install librocksdb-dev build-essential
 
-echo -e "\e[1m\e[32m3. Downloading and building massa binary... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m3. Downloading and building latest massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
-wget https://github.com/massalabs/massa/releases/download/TEST.15.1/massa_TEST.15.1_release_linux.tar.gz
-tar xvzf massa_TEST.15.1_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.16.0/massa_TEST.16.0_release_linux.tar.gz
+tar xvzf massa_TEST.16.0_release_linux.tar.gz
 
 # Update config
 cd $HOME
