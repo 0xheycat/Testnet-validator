@@ -76,3 +76,16 @@ Restart Node
 ```bash
 sudo systemctl restart minima_9001
 ```
+Remove Node
+```bash
+sudo systemctl stop minima_9001
+sudo systemctl disable minima_9001
+sudo rm -rf /home/minima/.minima*
+sudo rm $(which minima*) -rf
+```
+if you run multiple Node
+```bash
+sudo systemctl stop minima_8001
+sudo systemctl stop minima_7001
+sudo systemctl stop minima_9021
+```
