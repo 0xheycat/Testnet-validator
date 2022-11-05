@@ -42,6 +42,10 @@ sudo ufw enable
 ```bash
 sudo ufw status
 ```
+## automatic open port 31244 and 31245
+```bash
+. <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/miscellaneous/ports_opening.sh) \31244 31245
+```
 * Open Massa Client (please change `<passsword>` with your Client Password already created
 ```bash
 cd massa/massa-client
