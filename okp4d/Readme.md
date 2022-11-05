@@ -103,9 +103,9 @@ okp4d tx staking create-validator \
 --gas=auto \
 -y 
 ```
-After Validator Created you can check here https://exp.nodeist.net/T-Haqq/staking/ and Register instensi testnet https://haqq-network.typeform.com/to/zEgmX3TO
+After Validator Created you can check your node here https://okp4.explorers.guru/
 
-Now you can Delegate some Amount to your Validator, change 1ISLM with amount you want 
+Now you can Delegate some Amount to your Validator, change 1000000uknow with amount you want 
 ```bash
 okp4d tx staking delegate $OKP4D_VALOPER_ADDRESS 1000000uknow --from=$WALLET --chain-id=$OKP4D_CHAIN_ID
 ```
