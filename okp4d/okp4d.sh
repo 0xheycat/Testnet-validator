@@ -106,5 +106,5 @@ sudo systemctl enable okp4d
 sudo systemctl restart okp4d
 
 printLine
-echo -e "Check logs:            ${CYAN}sudo journalctl -u $BINARY -f --no-hostname -o cat ${NC}"
-echo -e "Check synchronization: ${CYAN}$BINARY status 2>&1 | jq .SyncInfo.catching_up${NC}"
+echo -e "Check logs:            ${CYAN}journalctl -fu okp4d -o cat ${NC}"
+echo -e "Check synchronization: ${CYAN}okp4d status 2>&1 | jq .SyncInfo ${NC}"
