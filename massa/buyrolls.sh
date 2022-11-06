@@ -4,12 +4,18 @@ if [ ! $PASSWORD ]; then
 read -p "Input Your Client Password : " PASSWORD
 echo 'export PASSWORD='\"${PASSWORD}\" >> $HOME/.bash_profile
 fi
+if [ ! $MASSA_ADDRESS ]; then
+read -p "Input Your MASSA_ADDRESS: " MASSA_ADDRESS
+echo 'export MASSA_ADDRESS='\"${MASSA_ADDRESS}\" >> $HOME/.bash_profile
+fi
 echo 'source $HOME/.bashrc' >> $HOME/.bash_profile
 . $HOME/.bash_profile
 
 echo -e "Password Your Client: \e[1m\e[32m${PASSWORD}\e[0m"
+echo -e "Your Massa address: \e[1m\e[32m${MASSA_ADDRESS}\e[0m"
 echo '================================================='
 PASSWORD=$PASSWORD
+MASSA_ADDRESS=$MASSA_ADDRESS
 sleep 1
 
 declare -i int_balance
@@ -35,7 +41,7 @@ balance=$(./massa-client wallet_info -p $PASSWORD | grep "Balance: final" | awk 
 echo "Balance is: " $balance;
 int_balance=${balance/\.*}
 if [ $int_balance -gt "99" ]; then
-        resp=$(./massa-client buy_rolls $wallet $(($int_balance/100)) 0 -p $PASSWORD )
+        resp=$(./massa-client buy_rolls $MASSA_ADDRESS $(($int_balance/100)) 0 -p $PASSWORD )
         echo $resp
 fi
 
