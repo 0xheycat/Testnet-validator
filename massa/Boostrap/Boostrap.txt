@@ -160,7 +160,7 @@
 [bootstrap]
     # list of bootstrap (ip, node id)
     bootstrap_list = [
-	    ["198.27.70.218:31245", "P123Auyov8ZHfGzuhacLKjKVBx3hRZfP6Jntkwnjch3PzKKmzPgT"],
+	["198.27.70.218:31245", "P123Auyov8ZHfGzuhacLKjKVBx3hRZfP6Jntkwnjch3PzKKmzPgT"],
         ["149.202.86.103:31245", "P12UbyLJDS7zimGWf3LTHe8hYY67RdLke1iDRZqJbQQLHQSKPW8j"],
         ["149.202.89.125:31245", "P12vxrYTQzS5TRzxLfFNYxn6PyEsphKWkdqx2mVfEuvJ9sPF43uq"],
         ["158.69.120.215:31245", "P12rPDBmpnpnbECeAKDjbmeR19dYjAUwyLzsa8wmYJnkXLCNF28E"],
