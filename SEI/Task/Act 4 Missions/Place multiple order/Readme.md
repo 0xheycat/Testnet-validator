@@ -121,5 +121,27 @@ seid tx sign $HOME/gen_tx.json -s $SEQ -a $NUM --offline \
 --output-document $HOME/txs.json
 seid tx broadcast --node https://sei-testnet-rpc.brocha.in:443 $HOME/txs.json
 ```
+![Screenshot_130](https://user-images.githubusercontent.com/81378817/200892375-1c7abc58-eaa9-4207-a544-5bab681ab6a2.jpg)
 
 ## now fill form submission https://forms.gle/bWus5YH6S87LmZBY9
+
+Troubleshooting
+
+1. account sequence mismatch, expected 9082, got 9081: incorrect account sequence , what should i do ?
+ your account sequence has changed, so you need to update with new sequence
+ 
+```bash
+echo "export NUM=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .account_number)" >> $HOME/.bash_profile
+echo "export SEQ=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .sequence)" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+```
+
+Sign transaction
+```bash
+seid tx sign $HOME/gen_tx.json -s $SEQ -a $NUM --offline \
+--from wallet --chain-id atlantic-1 \
+--output-document $HOME/txs.json
+seid tx broadcast --node https://sei-testnet-rpc.brocha.in:443 $HOME/txs.json
+```
+
+Thank you
