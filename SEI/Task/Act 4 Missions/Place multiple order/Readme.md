@@ -14,10 +14,13 @@ orderType | Type your order | order type before you execute the transaction
 <!--EndFragment-->
 </body>
 </html>
-
+Before you start mission, your Node must cathing `false`, check your status sync
+```bash
+seid status 2>&1 | jq .SyncInfo
+```
 please replace `YOUR SEI ADDRESS` with your sei address ex seixxxxxxx
 ```bash
-{
+echo '{
   "body": {
     "messages": [
       {
