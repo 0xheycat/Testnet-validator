@@ -149,5 +149,5 @@ seid tx sign $HOME/gen_tx.json -s $SEQ -a $NUM --offline \
 seid tx broadcast --node https://sei-testnet-rpc.brocha.in:443 $HOME/txs.json
 ```
 
-Still confused please following video Guide https://youtu.be/Maq2aEYmKxU
+Still confused please following video Guide https://youtu.be/tDVlohXuJ_E
 Thank you
