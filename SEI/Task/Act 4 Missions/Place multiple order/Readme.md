@@ -123,7 +123,12 @@ seid tx broadcast --node https://sei-testnet-rpc.brocha.in:443 $HOME/txs.json
 ```
 ![Screenshot_130](https://user-images.githubusercontent.com/81378817/200892375-1c7abc58-eaa9-4207-a544-5bab681ab6a2.jpg)
 
-## now fill form submission https://forms.gle/bWus5YH6S87LmZBY9
+check your transaction on explorer, replace xx with txhash
+```bash
+https://sei.explorers.guru/transaction/xx 
+```
+
+fill form submission https://forms.gle/bWus5YH6S87LmZBY9
 
 Troubleshooting
 
