@@ -113,7 +113,7 @@ wallet_generate_secret_key
 ```bash
 echo $HOME /massa/massa-node/config/node_privkey.key
 echo $HOME /massa/massa-client/wallet.dat
-cp $HOME/massa/massa-node/config/node_privkey.key $HOME/massa_backup/wallet.dat
+cp $HOME/massa/massa-node/config/node_privkey.key $HOME/massa_backup/node_privkey.key
 cp $HOME/massa/massa-client/wallet.dat $HOME/massa_backup/wallet.dat
 ```
 * Restore old wallet 
