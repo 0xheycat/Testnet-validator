@@ -105,8 +105,8 @@ echo '{
 export data to your VPS, Please replace `SEI_ADDRESS` with your SEI address, ex seixxxxx
 
 ```bash
-echo "export NUM=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .account_number)" >> $HOME/.bash_profile
-echo "export SEQ=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .sequence)" >> $HOME/.bash_profile
+echo "export NUM=$(seid q account SEI_ADDRESS -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .account_number)" >> $HOME/.bash_profile
+echo "export SEQ=$(seid q account SEI_ADDRESS -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .sequence)" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 check data 
@@ -136,8 +136,8 @@ Troubleshooting
  your account sequence has changed, so you need to update with new sequence
  
 ```bash
-echo "export NUM=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .account_number)" >> $HOME/.bash_profile
-echo "export SEQ=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .sequence)" >> $HOME/.bash_profile
+echo "export NUM=$(seid q account SEI_ADDRESS -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .account_number)" >> $HOME/.bash_profile
+echo "export SEQ=$(seid q account SEI_ADDRESS -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .sequence)" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
@@ -149,4 +149,5 @@ seid tx sign $HOME/gen_tx.json -s $SEQ -a $NUM --offline \
 seid tx broadcast --node https://sei-testnet-rpc.brocha.in:443 $HOME/txs.json
 ```
 
+Still confused please following video Guide https://youtu.be/Maq2aEYmKxU
 Thank you
