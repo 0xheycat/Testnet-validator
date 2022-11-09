@@ -105,9 +105,14 @@ echo '{
 export data to your VPS, Please replace `SEI_ADDRESS` with your SEI address, ex seixxxxx
 
 ```bash
-echo "export NUM=$(seid q account SEI_ADDRESS -o json | jq -r .account_number)" >> $HOME/.bash_profile
-echo "export SEQ=$(seid q account SEI_ADDRESS -o json | jq -r .sequence)" >> $HOME/.bash_profile
+echo "export NUM=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .account_number)" >> $HOME/.bash_profile
+echo "export SEQ=$(seid q account $ADDR -o json --node https://sei-testnet-rpc.brocha.in:443 | jq -r .sequence)" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+```
+check data 
+```bash
+echo $NUM
+echo $SEQ
 ```
 Sign transaction
 ```bash
