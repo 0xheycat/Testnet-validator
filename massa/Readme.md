@@ -111,6 +111,7 @@ wallet_generate_secret_key
 ```
 * Backup your Node,please save your DATA on safe placee
 ```bash
+mkdir massa_backup
 echo $HOME /massa/massa-node/config/node_privkey.key
 echo $HOME /massa/massa-client/wallet.dat
 cp $HOME/massa/massa-node/config/node_privkey.key $HOME/massa_backup/node_privkey.key
