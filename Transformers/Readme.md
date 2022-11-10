@@ -37,12 +37,12 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.10.1 updated 08/nov/2022 (Latest version)
+## Upgrade TTFSC to v0.12.0 updated 11/nov/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
-Details V0.11.0 updates
+Details V0.12.0 updates
 1. Add mobile transaction interface.
-2. Solve the problem of selecting wrong signature node in some cases.
+2. Directly replace the old program, no need to delete data.db.
 
 ## additional Instructions: 
 
@@ -52,7 +52,7 @@ Details V0.11.0 updates
 Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
-rm -rf tfs_v0.10.1_507e3de_devnet
+rm -rf tfs_v0.11.0_ffa3d85_devnet
 rm -rf config.json
 ```
 
@@ -63,13 +63,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.11.0_ffa3d85_devnet 
-chmod +x tfs_v0.11.0_ffa3d85_devnet
+wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.12.0_9120842_devnet
+chmod +x tfs_v0.12.0_9120842_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.11.0_ffa3d85_devnet
+./tfs_v0.12.0_9120842_devnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -83,13 +83,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.11.0_ffa3d85_devnet -m
+./tfs_v0.12.0_9120842_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.11.0_ffa3d85_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.12.0_9120842_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
