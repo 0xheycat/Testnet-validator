@@ -15,6 +15,12 @@
 ## 1.2 Register intensivized Testnet 
 https://haqq-network.typeform.com/to/zEgmX3TO
 
+## Instalation 
+Automatic instalation 
+```bash
+wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
+```
+
 ## 🚨 Update Genesis HAQQ 54211-3
 ```bash
 wget -O Genesis%20update%20haqq_54211-3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/Genesis%20update%20haqq_54211-3.sh && chmod +x Genesis%20update%20haqq_54211-3.sh && ./Genesis%20update%20haqq_54211-3.sh
@@ -29,11 +35,6 @@ Change the `enable` parameter to `false`
 
 save with press `CTRL+X` and yes
 
-## Instalation 
-Automatic instalation old binnary(please skip install)
-```bash
-wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
-```
 ## 🟢Upgrade haqqd v1.0.3 Automatic 
 ```bash
 wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
