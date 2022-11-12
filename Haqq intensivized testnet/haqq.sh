@@ -82,17 +82,18 @@ sed -i 's|pruning-keep-recent = "0"|pruning-keep-recent = "100"|g' $HOME/.haqqd/
 sed -i 's|pruning-interval = "0"|pruning-interval = "10"|g' $HOME/.haqqd/config/app.toml
 
 # create service
-
-sudo tee /etc/systemd/system/haqqd.service >/dev/null <<EOF
+sudo tee /etc/systemd/system/haqqd.service > /dev/null <<EOF
 [Unit]
-Description=Haqq Network Node
+Description=haqq
 After=network-online.target
+
 [Service]
 User=$USER
-ExecStart=$(which haqqd) start
+ExecStart=$(which haqqd) start --home $HOME/.haqqd
 Restart=on-failure
-RestartSec=10
-LimitNOFILE=10000
+RestartSec=3
+LimitNOFILE=65535
+
 [Install]
 WantedBy=multi-user.target
 EOF
