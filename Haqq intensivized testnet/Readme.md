@@ -16,7 +16,7 @@
 https://haqq-network.typeform.com/to/zEgmX3TO
 
 ## Instalation 
-Automatic instalation 
+Automatic install -- upgrade v1.2.1
 ```bash
 wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
 ```
