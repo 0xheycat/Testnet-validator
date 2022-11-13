@@ -4,14 +4,14 @@
 
 service Node isn't pointing to the correct file,
 
-in case im tried to check rebusd service, you can replace `rebusd` with other service like `seid` `haqqd` which NODE used
+in case im tried to check rebusd service, you can replace `rebusd` with other service like `seid` `haqqd` `celestiad` which NODE used
 ```bash
 which rebusd
 ```
 ![Screenshot_134](https://user-images.githubusercontent.com/81378817/201504146-ab8b255d-1036-416d-b5d4-d1eb5ee8ce98.jpg)
 
 ```bash
-rebusd config keyring-backend file
+rebusd config keyring-backend test
 ```
 now try again to adding/restore your wallet
 
@@ -19,3 +19,5 @@ now try again to adding/restore your wallet
 
 
 Congrats 
+You can also use it when you try to check the balance but doesn't appear, or your wallet address not appear
+thank you 
