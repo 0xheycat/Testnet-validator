@@ -93,14 +93,30 @@ nano ~/node/bor/start.sh
 seeds="f4f605d60b8ffaaf15240564e58a81103510631c@159.203.9.164:26656,4fb1bc820088764a564d4f66bba1963d47d82329@44.232.55.71:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|;' $HOME/.heimdalld/config/config.toml
 ```
-## Start Heimdall service
+## To enable Archive mode you can add the following flags in the `start.sh` file
 ```bash
-systemctl heimdalld enable
+nano ~/node/bor/start.sh
+```
+
+```bash
+--gcmode 'archive' \
+--ws --ws.port 8546 --ws.addr 0.0.0.0 --ws.origins '*' \
+```
+
+## Start Heimdall,heimdalld-rest-server and Bor service
+```bash
+sudo systemctl heimdalld enable
+sudo service heimdalld start
 systemctl heimdalld start
-journalctl -u -f hemdalld -n 100
+sudo service bor start
+sudo service heimdalld-rest-server start
 ```
 ## Additional cmd
 check status
 ```bash
 curl localhost:26657/status
+```
+check log
+```bash
+journalctl -u -f hemdalld -n 100
 ```
