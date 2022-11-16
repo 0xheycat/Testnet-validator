@@ -12,3 +12,6 @@
 * CPU 4 cores (Intel Xeon Skylake or newer)
 * RAM 16GB RAM
 * Storage 500 GB
+
+## Install Node
+[Matic Testnet](https://github.com/fatalbar/Testnet-validator/tree/main/blastapi/Matic/Testnet)
