@@ -80,28 +80,35 @@ nano ~/.heimdalld/config/config.toml
 * Set the max_open_connections value to 100
 
 ## edit `start.sh`
-```bash
-nano ~/node/bor/start.sh
-```
-## insert bootnodes
-```bash
---bootnodes "enode://0cb82b395094ee4a2915e9714894627de9ed8498fb881cec6db7c65e8b9a5bd7f2f25cc84e71e89d0947e51c76e85d0847de848c7782b13c0255247a6758178c@44.232.55.71:30303,enode://88116f4295f5a31538ae409e4d44ad40d22e44ee9342869e7d68bdec55b0f83c1530355ce8b41fbec0928a7d75a5745d528450d30aec92066ab6ba1ee351d710@159.203.9.164:30303"
-```
-![Screenshot_141](https://user-images.githubusercontent.com/81378817/202087329-b7aa7f1a-9e3b-4a2d-bee5-aa7618058454.jpg)
-## adding seed
-```bash
-seeds="f4f605d60b8ffaaf15240564e58a81103510631c@159.203.9.164:26656,4fb1bc820088764a564d4f66bba1963d47d82329@44.232.55.71:26656"
-sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|;' $HOME/.heimdalld/config/config.toml
-```
-## To enable Archive mode you can add the following flags in the `start.sh` file
+
+## Add the following flag in  `~/node/bor/start.sh` to the bor start params:
 ```bash
 nano ~/node/bor/start.sh
 ```
 
 ```bash
---gcmode 'archive' \
---ws --ws.port 8546 --ws.addr 0.0.0.0 --ws.origins '*' \
+--bootnodes "enode://320553cda00dfc003f499a3ce9598029f364fbb3ed1222fdc20a94d97dcc4d8ba0cd0bfa996579dcc6d17a534741fb0a5da303a90579431259150de66b597251@54.147.31.250:30303"
 ```
+![Screenshot_141](https://user-images.githubusercontent.com/81378817/202087329-b7aa7f1a-9e3b-4a2d-bee5-aa7618058454.jpg)
+## adding seed
+```bash
+seeds="4cd60c1d76e44b05f7dfd8bab3f447b119e87042@54.147.31.250:26656,b18bbe1f3d8576f4b73d9b18976e71c65e839149@34.226.134.117:26656"
+sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|;' $HOME/.heimdalld/config/config.toml
+```
+## Configure the following set up the configuration files  `~/.heimdalld/config/heimdall-config.toml`
+```bash
+sudo nano ~/.heimdalld/config/heimdall-config.toml
+```
+setting RPC https://houston.blastapi.io/ and insert you rpc from blastapi
+```bash
+eth_rpc_url =< you can refer to blastapi.io and get your own Matic endpoint, input it here >
+```
+example
+```bash
+eth_rpc_url = "https://polygon-testnet.houston.blastapi.io/xxxxxxxxxxxxx:9545"
+```
+![Screenshot_142](https://user-images.githubusercontent.com/81378817/202092093-82563ea2-0419-4a40-9c38-91afd1aed975.jpg)
+
 
 ## Start Heimdall,heimdalld-rest-server and Bor service
 ```bash
@@ -111,6 +118,30 @@ systemctl heimdalld start
 sudo service bor start
 sudo service heimdalld-rest-server start
 ```
+Congrsts You now have a running Polygon Testnet RPC node. All you need to do now is wait for it to sync. You can check if the node is synced by running the API Call listed below from inside your environment. You are going to need to have the curl and jq packages installed for this, so make sure to install them beforehand.
+```bash
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "eth_syncing","params": []}' localhost:8545
+```
+If the result is false, it means that your node is fully synced.
+Another way to check which block the node is at would be running:
+```bash
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "eth_blockNumber","params": []}' localhost:8545
+```
+The Polygon node exports both RPC on port 8545 and WS on port 8546.
+In order to test the WS endpoint, we will need to install a package called node-ws.
+An example WS call would look like this:
+```bash
+wscat --connect ws://localhost:8546
+> {"id":1, "jsonrpc":"2.0", "method": "eth_blockNumber","params": []}
+```
+after completed following Task you can register Node https://houston.blastapi.io/provider
+![Screenshot_143](https://user-images.githubusercontent.com/81378817/202093002-c7b2d99e-93c7-46dc-9bce-78df3e71a7cb.jpg)
+
+![Screenshot_144](https://user-images.githubusercontent.com/81378817/202093088-f254b4a5-984f-4a26-bca5-12a50676c9fc.jpg)
+
+![Screenshot_145](https://user-images.githubusercontent.com/81378817/202093184-952ae4af-123a-4493-a922-38dba10d3096.jpg)
+and fill feedback 
+
 ## Additional cmd
 check status
 ```bash
