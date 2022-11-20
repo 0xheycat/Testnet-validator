@@ -17,6 +17,10 @@
 ```bash
 sudo apt install make clang pkg-config libssl-dev libclang-dev build-essential git curl ntp jq llvm tmux htop screen unzip cmake -y
 ```
+Install Docker & docker_compose, Resource Docker from SecorD0 thank you [SecorD0](https://github.com/SecorD0/Minima/tree/main/docker)
+```bash
+. <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/docker.sh)
+```
 ## Install Heimdall
 ```bash
 cd heimdall
