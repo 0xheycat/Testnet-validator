@@ -67,7 +67,7 @@ Download New File
 ```bash
 cd tfsc
 wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.15.1_1023a80_devnet
-chmod +x tfs_v0.14.0_282756b_devnet
+chmod +x tfs_v0.15.1_1023a80_devnet
 ```
 
 init config file, will generate new `config.json`
