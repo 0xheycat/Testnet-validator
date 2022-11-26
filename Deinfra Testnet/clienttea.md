@@ -36,6 +36,25 @@ Ubuntu 22.04 | 24.3 | 10.4 | latest (20.10.18 as of September 2022) | Virtual ma
 
 [Register phase 1](https://github.com/fatalbar/Testnet-validator/blob/main/Deinfra%20Testnet/Register%20PHASE%201.md) CLOSED
 
+## Open port 1080, 1443, 1800
+open port using script from [secord0](https://github.com/SecorD0) thank you [secord0](https://github.com/SecorD0)
+```bash
+. <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/miscellaneous/ports_opening.sh) \1080 1443 1800 443
+```
+or using manual 
+```bash
+ufw allow 1080 && ufw allow 1443 && ufw allow 1800
+ufw allow 22
+sudo ufw allow 1080/tcp
+sudo ufw allow 1443/tcp
+sudo ufw allow 1800/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+```
+check status UFW
+```bash
+sudo ufw status verbose
+```
 # Install requirement
 ```bash
 sudo apt-get update -y && sudo apt-get install wget -y
