@@ -32,7 +32,10 @@ Copy the node directory from `_build/default/rel/thepower` to `/opt` by running 
 ```bash
 cp -r _build/default/rel/thepower /opt
 ```
-Copy genesis file and config, please edit `node.config` you can configure node.config by following this link https://github.com/thepower/tpnode/blob/master/guides/tpNodeConfiguration.md
+Copy genesis file and config
+* please edit `node.config` you can configure node.config by following this link https://github.com/thepower/tpnode/blob/master/guides/tpNodeConfiguration.md
+* or you can get `node.config` and `genesis.txt` by running ceremony Tea client https://github.com/fatalbar/Testnet-validator/blob/main/Deinfra%20Testnet/clienttea.md
+* Replace tpnode with directory teaclient location
 ```bash
 cp $HOME/tpnode/node.config /opt/thepower/node.config
 cp $HOME/tpnode//genesis.txt /opt/thepower/genesis.txt
