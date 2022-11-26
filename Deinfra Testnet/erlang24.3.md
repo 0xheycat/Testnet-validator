@@ -1,4 +1,4 @@
-## Install requirement
+## Install requirements
 ```bash
 apt install git
 ```
