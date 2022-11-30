@@ -36,7 +36,16 @@ Copy genesis file and config
 * please edit `node.config` you can configure node.config by following this link https://github.com/thepower/tpnode/blob/master/guides/tpNodeConfiguration.md
 * or you can get `node.config` and `genesis.txt` by running ceremony Tea client https://github.com/fatalbar/Testnet-validator/blob/main/Deinfra%20Testnet/clienttea.md
 
-## Install SSL
+## Install acme.sh and Configure SSL
+```bash
+sudo -i
+apt-get install socat
+```
+Replace `YOUREMAIL`
+```bash
+curl https://get.acme.sh | sh -s email=YOUREMAIL
+source $HOME/.bashrc
+```
 Please Replace `HOSTNAME` with your hostname from `node.config` example `c1056n5`
 
 ```bash
