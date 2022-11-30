@@ -37,15 +37,17 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.15.1 updated 21/nov/2022 (Latest version)
+## Upgrade TTFSC to v0.16 updated 28/nov/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
-Update of v0.15.1
-✅ Remove on-chain TPS as a calculation parameter for gas and change it to UTXO's storage cost as an important basis for gas composition.
-✅ Solve the problem of duplicate selection when VRF selects voting nodes.
-✅ Solve the possible failure of the block replenishment protocol caused by the lack of pre-hash when broadcasting a block build.
-✅ Solve the calculation error of claiming reward funds.
-✅ Update third party open source libraries: RocksDB changed to v7.6.0 and protobuf changed to v3.21.9.
+Update of v0.16.0
+✅ Add block pools to reduce lock occupancy.
+✅ Add investment amount cache to reduce the frequency of database calls.
+✅ Solve the memory leak and deadlock problem of the circular list used for node selection.
+✅ Solve the block jam problem caused by the simultaneous existence of unstaking (uninvestment) transactions and normal signature transactions on the same height for some accounts.
+✅ Add local gas cost calculation function for smart contract transactions.
+✅ Fix some other issues.
+
 
 ## additional Instructions: 
 
@@ -55,7 +57,7 @@ Update of v0.15.1
 Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
-rm -rf tfs_v0.14.0_282756b_devnet
+rm -rf tfs_v0.15.1_1023a80_devnet
 rm -rf config.json
 ```
 
@@ -66,13 +68,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.15.1_1023a80_devnet
-chmod +x tfs_v0.15.1_1023a80_devnet
+wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.16.0_c442105_devnet
+chmod +x tfs_v0.16.0_c442105_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.15.1_1023a80_devnet
+./tfs_v0.16.0_c442105_devnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -86,13 +88,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.15.1_1023a80_devnet -m
+./tfs_v0.16.0_c442105_devnet
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.15.1_1023a80_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.16.0_c442105_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
