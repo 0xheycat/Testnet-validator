@@ -66,6 +66,9 @@ cd /opt/thepower
 mkdir {db,log}
 ```
 move `node.config` and `genesis.txt` from teaclient directory
+
+NOTE
+The private key you get from node.config file cannot be restored, if you lose it. Please, backup it securely.
 ```bash
 cp $HOME/teaclient/node.config /opt/thepower/node.config
 cp $HOME/teaclient//genesis.txt /opt/thepower/genesis.txt
