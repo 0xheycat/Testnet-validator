@@ -9,7 +9,7 @@
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## Information testnet Massa 17
+## Detail testnet Massa 17
 The scoring will start at cycle 165, on Sunday, December 04 2022, 21:52 UTC
 The scoring will end at cycle 1199, on Thursday, December 29 2022, 10:05 UTC
 
