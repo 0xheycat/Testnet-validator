@@ -87,9 +87,13 @@ chmod +x teaclient
 
 ![Screenshot_173](https://user-images.githubusercontent.com/81378817/204104073-5056a848-b3dd-4e01-877a-3d7168a3ef93.jpg)
 
-To start the client, run the following command:
+To start the client, please replace aaaaa with chain ID,and bbbbb with personal Token
 ```bash
 ./teaclient -n nickname aaaaa.bbbbb
+```
+example 
+```bash
+./teaclient -n whoisme 638EC282D438.00ED54351ED4E4
 ```
 where
 
@@ -99,10 +103,17 @@ where
 
 The token (aaaaa.bbbbb) consists of two parts:
 
-* aaaaa — chain token. It is common for all nodes in the chain, and
+* aaaaa — chain token. It is common for all nodes in the chain 
 * bbbbb — personal token. It can't be expired until it is used, but you can use it only once.
 If you start the Tea Ceremony with the public part of the token, you will be able to check the ports availability.
 
 After you have started the client, wait for other participants. Please, DON'T turn off the Tea Ceremony client for 24 hours.
+
+How to get chain Token ?
+
+you can get from channel https://t.me/thepowerio, keep looking and wait next drop, because is limited only 10 participate per drop, so you must fast
+
+![Screenshot_179](https://user-images.githubusercontent.com/81378817/204824998-870ee0d1-8df0-4f81-80ec-9ca919b234d2.jpg)
+
 
 
