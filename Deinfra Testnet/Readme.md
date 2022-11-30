@@ -101,4 +101,10 @@ Back to BOT and click following instruction
 ![Screenshot_178](https://user-images.githubusercontent.com/81378817/204818743-7e948eef-cdfd-4160-a160-866697821c83.jpg)
 
 Need some times to sync, after you got HEIGHT from your NODE you can send LINK status NODE on BOT
+![Screenshot_180](https://user-images.githubusercontent.com/81378817/204913613-9026a950-7d7f-48b7-8ced-bf7c42b808fe.jpg)
+
+
+![Screenshot_181](https://user-images.githubusercontent.com/81378817/204913640-c4ad6232-16c4-4e63-91c9-287ffcd93f1e.jpg)
+
+
 Thank you
