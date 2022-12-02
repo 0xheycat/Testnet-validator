@@ -82,13 +82,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.18.0_26a1149_devnet
+./tfs_v0.18.0_26a1149_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.18.0_26a1149_devnet'
+screen -dmS tfsc bash -c './tfs_v0.18.0_26a1149_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
