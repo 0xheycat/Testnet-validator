@@ -37,17 +37,11 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.16 updated 28/nov/2022 (Latest version)
+## Upgrade TTFSC to v0.18 updated 02/dec/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
-Update of v0.16.0
-✅ Add block pools to reduce lock occupancy.
-✅ Add investment amount cache to reduce the frequency of database calls.
-✅ Solve the memory leak and deadlock problem of the circular list used for node selection.
-✅ Solve the block jam problem caused by the simultaneous existence of unstaking (uninvestment) transactions and normal signature transactions on the same height for some accounts.
-✅ Add local gas cost calculation function for smart contract transactions.
-✅ Fix some other issues.
-
+Update of v0.18.0
+✅ Solve the problem of a smaller range of available nodes due to type conversion.
 
 ## additional Instructions: 
 
@@ -57,7 +51,7 @@ Update of v0.16.0
 Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
-rm -rf tfs_v0.15.1_1023a80_devnet
+rm -rf tfs_v0.16.0_c442105_devnet
 rm -rf config.json
 ```
 
@@ -68,13 +62,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.16.0_c442105_devnet
-chmod +x tfs_v0.16.0_c442105_devnet
+wget -q https://fastcdn.uscloudmedia.com/transformers/test/tfs_v0.18.0_26a1149_devnet
+chmod +x tfs_v0.18.0_26a1149_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.16.0_c442105_devnet
+./tfs_v0.18.0_26a1149_devnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -88,13 +82,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.16.0_c442105_devnet
+./tfs_v0.18.0_26a1149_devnet
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.16.0_c442105_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.18.0_26a1149_devnet'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
