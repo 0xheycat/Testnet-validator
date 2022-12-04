@@ -10,8 +10,8 @@
 * Disk: Recommend 200 GB Disk
 
 ## Detail testnet Massa 17.1
-The scoring will start at cycle 229, on Tuesday, December 06 2022, 10:16 UTC
-The scoring will end at cycle 1199, on Thursday, December 29 2022, 10:05 UTC
+* The scoring will start at cycle 229, on Tuesday, December 06 2022, 10:16 UTC
+* The scoring will end at cycle 1199, on Thursday, December 29 2022, 10:05 UTC
 
 ##  Installation massa 17.1 Automatic (Latest version) 03.12.2022
 ```bash
