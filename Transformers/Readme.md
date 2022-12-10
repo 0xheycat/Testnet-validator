@@ -37,11 +37,16 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.18 updated 02/dec/2022 (Latest version)
+## Upgrade TTFSC to v0.19 updated 10/dec/2022 (Latest version)
 > Transformer 2nd phase for public LIVE:
 
-Update of v0.18.0
-✅ Solve the problem of a smaller range of available nodes due to type conversion.
+Update of v0.19.0
+✅ Add block pool caching mechanism.
+✅ Add mechanism of double broadcast.
+✅ Add mechanism to select available VRF nodes according to node status.
+✅ Solve the problem of crash in consensus.
+✅ Solve the default synchronization period.
+✅ Solve other bugs.
 
 ## additional Instructions: 
 
@@ -51,7 +56,7 @@ Update of v0.18.0
 Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
-rm -rf tfs_v0.16.0_c442105_devnet
+rm -rf tfs_v0.18.0_26a1149_devnet
 rm -rf config.json
 ```
 
@@ -62,13 +67,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://fastcdn.uscloudmedia.com/transformers/test/tfs_v0.18.0_26a1149_devnet
+wget -q https://fastcdn.uscloudmedia.com/transformers/test/tfs_v0.19.0_000aec2_devnet
 chmod +x tfs_v0.18.0_26a1149_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.18.0_26a1149_devnet
+./tfs_v0.19.0_000aec2_devnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -82,13 +87,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.18.0_26a1149_devnet -m
+./tfs_v0.19.0_000aec2_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.18.0_26a1149_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.19.0_000aec2_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
