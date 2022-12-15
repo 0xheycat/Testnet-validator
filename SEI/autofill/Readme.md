@@ -47,6 +47,10 @@ Click Generate Autofill Rules
 
 ![Screenshot_225](https://user-images.githubusercontent.com/81378817/207749499-10fda7bb-a72f-40c4-9520-63fc77b8dd46.jpg)
 
+Result
+
+![sei](https://user-images.githubusercontent.com/81378817/207750527-03702cf7-1b9c-405f-8d11-1498206480df.gif)
+
 
 Thank you
 
