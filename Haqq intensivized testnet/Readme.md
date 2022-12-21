@@ -21,6 +21,11 @@ Automatic install -- upgrade v1.2.1
 wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
 ```
 
+🟢 UPGRADE HAQQ v1.3.0
+
+https://github.com/fatalbar/Testnet-validator/tree/main/Haqq%20intensivized%20testnet/upgrade/haqq%20v1.3.0
+
+
 ## 🚨 Update Genesis HAQQ 54211-3
 ```bash
 wget -O Genesis%20update%20haqq_54211-3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/Genesis%20update%20haqq_54211-3.sh && chmod +x Genesis%20update%20haqq_54211-3.sh && ./Genesis%20update%20haqq_54211-3.sh
