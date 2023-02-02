@@ -76,7 +76,7 @@ Setting your IP automatically to `config.json`, make sure you on the directory i
 ```bash
 cd
 cd tfsc
-PUB_IP=$(wget -qO- eth0.me);wget -qO- pastebin.com/raw/MfS126mf|sed 's#\"ip\": \"pub_ip\"#\"ip\": '\"${PUB_IP}\"'#' > config.json
+PUB_IP=$(wget -qO- eth0.me);wget -qO- https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Transformers/config.json|sed 's#\"ip\": \"pub_ip\"#\"ip\": '\"${PUB_IP}\"'#' > config.json
 ```
 
 Running Node 
