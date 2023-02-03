@@ -9,11 +9,11 @@
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## Detail testnet Massa 19.0
+## Detail testnet Massa 19.1
 * The scoring will start at cycle 183, on Monday, February 06 2023, 08:06 UTC
 * The scoring will end at cycle 1000, on Saturday, February 25 2023, 16:53 UTC
 
-##  Installation massa 19.0 Automatic (Latest version) 02.02.2023
+##  Installation massa 19.1 Automatic (Latest version) 02.02.2023
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
