@@ -9,6 +9,9 @@
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
+## Upgrade MASSA 9.2 
+https://github.com/fatalbar/Testnet-validator/tree/main/massa/upgrade
+
 ## Detail testnet Massa 19.1
 * The scoring will start at cycle 183, on Monday, February 06 2023, 08:06 UTC
 * The scoring will end at cycle 1000, on Saturday, February 25 2023, 16:53 UTC
