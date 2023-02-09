@@ -9,12 +9,12 @@
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## Upgrade MASSA 9.2 
+## Upgrade MASSA 19.2 
 https://github.com/fatalbar/Testnet-validator/tree/main/massa/upgrade
 
 ## Detail testnet Massa 19.x
-The scoring will start at cycle 158, on Monday, February 13 2023, 07:53 UTC
-The scoring will end at cycle 703, on Sunday, February 26 2023, 05:55 UTC
+* The scoring will start at cycle 158, on Monday, February 13 2023, 07:53 UTC
+* The scoring will end at cycle 703, on Sunday, February 26 2023, 05:55 UTC
 
 ##  Installation massa 19.1 Automatic (Latest version) 02.02.2023
 ```bash
