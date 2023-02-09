@@ -27,23 +27,30 @@ echo -e "Your Password : \e[1m\e[32m${PASSWORD}\e[0m"
 echo '================================================='
 sleep 1
 
+echo -e "\e[1m\e[32m2. backup wallet... \e[0m" && sleep 1
+
+# backup wallet
+mkdir massa_backup
+echo $HOME /massa/massa-node/config/node_privkey.key
+echo $HOME /massa/massa-client/wallet.dat
+cp $HOME/massa/massa-node/config/node_privkey.key $HOME/massa_backup/node_privkey.key
+cp $HOME/massa/massa-client/wallet.dat $HOME/massa_backup/wallet.dat
+
 # delete old folder
 rm -rf massa
-rm -rf massa-test.sh
+rm -rf massa.sh
 rm -rf massa-testnet.sh
 rm -rf massa_TEST.19.1_release_linux.tar.gz
-
-echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
-
-# install packages
-sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
-sudo apt-get install librocksdb-dev build-essential
 
 echo -e "\e[1m\e[32m3. upgrade latest massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
 wget https://github.com/massalabs/massa/releases/download/TEST.19.2/massa_TEST.19.2_release_linux.tar.gz
 tar xvzf massa_TEST.19.2_release_linux.tar.gz
+
+#restoring wallet
+cp $HOME/massa_backup/node_privkey.key $HOME/massa/massa-node/config/
+cp $HOME/massa_backup/wallet.dat $HOME/massa/massa-client/
 
 # Update config
 cd $HOME
