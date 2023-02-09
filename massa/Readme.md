@@ -12,9 +12,9 @@
 ## Upgrade MASSA 9.2 
 https://github.com/fatalbar/Testnet-validator/tree/main/massa/upgrade
 
-## Detail testnet Massa 19.1
-* The scoring will start at cycle 183, on Monday, February 06 2023, 08:06 UTC
-* The scoring will end at cycle 1000, on Saturday, February 25 2023, 16:53 UTC
+## Detail testnet Massa 19.x
+The scoring will start at cycle 158, on Monday, February 13 2023, 07:53 UTC
+The scoring will end at cycle 703, on Sunday, February 26 2023, 05:55 UTC
 
 ##  Installation massa 19.1 Automatic (Latest version) 02.02.2023
 ```bash
