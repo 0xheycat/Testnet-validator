@@ -15,6 +15,18 @@
 ## 1.2 Register intensivized Testnet 
 https://haqq-network.typeform.com/to/zEgmX3TO
 
+## Instalation 
+Automatic install -- upgrade v1.2.1
+```bash
+wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
+```
+
+🔴 UPGRADE HAQQ v1.3.0
+https://github.com/fatalbar/Testnet-validator/tree/main/Haqq%20intensivized%20testnet/upgrade/haqq%20v1.3.0
+
+🟢 UPGRADE HAQQ v1.3.1 Latest version 8/2/2023
+https://github.com/fatalbar/Testnet-validator/tree/main/Haqq%20intensivized%20testnet/upgrade/haqq%20v1.3.1
+
 ## 🚨 Update Genesis HAQQ 54211-3
 ```bash
 wget -O Genesis%20update%20haqq_54211-3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/Genesis%20update%20haqq_54211-3.sh && chmod +x Genesis%20update%20haqq_54211-3.sh && ./Genesis%20update%20haqq_54211-3.sh
@@ -29,17 +41,12 @@ Change the `enable` parameter to `false`
 
 save with press `CTRL+X` and yes
 
-## Instalation 
-Automatic instalation old binnary(please skip install)
-```bash
-wget -O haqq.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/haqq.sh && chmod +x haqq.sh && ./haqq.sh
-```
-## 🟢Upgrade haqqd v1.0.3 Automatic 
+## 🔴Upgrade haqqd v1.0.3 Automatic 
 ```bash
 wget -O upgrade%20haqqd%20v1.0.3.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.0.3.sh && chmod +x upgrade%20haqqd%20v1.0.3.sh && ./upgrade%20haqqd%20v1.0.3.sh
 ```
 
-## 🟢Upgrade haqqd to v1.1.0 Latest Commit (Automatic) to "v1.1.0" NEEDED at height: [256200](https://haqq.explorers.guru/block/256200)
+## 🔴Upgrade haqqd to v1.1.0 Latest Commit (Automatic) to "v1.1.0" NEEDED at height: [256200](https://haqq.explorers.guru/block/256200)
 Check your latest height 
 ```bash
 haqqd status 2>&1 | jq .SyncInfo
@@ -49,7 +56,7 @@ Now you can upgrade
 wget -O upgrade%20haqqd%20v1.1.0.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Haqq%20intensivized%20testnet/upgrade%20haqqd%20v1.1.0.sh && chmod +x upgrade%20haqqd%20v1.1.0.sh && ./upgrade%20haqqd%20v1.1.0.sh
 ```
 
-## 🟢Upgrade haqqd to v1.2.0 Latest Commit (Automatic) to "v1.2.0" NEEDED at height: [355555](https://haqq.explorers.guru/block/355555)
+## 🔴Upgrade haqqd to v1.2.0 Latest Commit (Automatic) to "v1.2.0" NEEDED at height: [355555](https://haqq.explorers.guru/block/355555)
 Check your latest height 
 ```bash
 haqqd status 2>&1 | jq .SyncInfo

@@ -37,12 +37,12 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.12.0 updated 11/nov/2022 (Latest version)
+## Upgrade TTFSC to v0.20.1 updated 05/1/2023
 > Transformer 2nd phase for public LIVE:
 
-Details V0.12.0 updates
-1. Add mobile transaction interface.
-2. Directly replace the old program, no need to delete data.db.
+Update of v0.20.1
+✅Added block replenishment protocol to the validation synchronization process.
+✅Solved the deadlock problem when block pools broadcast transactions.
 
 ## additional Instructions: 
 
@@ -52,7 +52,7 @@ Details V0.12.0 updates
 Delete old file, make sure you backup your previous cert file
 ```bash
 cd tfsc
-rm -rf tfs_v0.11.0_ffa3d85_devnet
+rm -rf tfs_v0.20.0_1c5f089_devnet
 rm -rf config.json
 ```
 
@@ -63,33 +63,33 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -q https://uscloudmedia.s3.us-west-2.amazonaws.com/transformers/test/tfs_v0.12.0_9120842_devnet
-chmod +x tfs_v0.12.0_9120842_devnet
+wget -c https://fastcdn.uscloudmedia.com/transformers/test/tfs_v0.20.1_7a9a151_devnet.tar.gz -O - | sudo tar -xz
+chmod +x tfs_v0.20.1_7a9a151_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.12.0_9120842_devnet
+./tfs_v0.20.1_7a9a151_devnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
 ```bash
 cd
 cd tfsc
-PUB_IP=$(wget -qO- eth0.me);wget -qO- pastebin.com/raw/MfS126mf|sed 's#\"ip\": \"pub_ip\"#\"ip\": '\"${PUB_IP}\"'#' > config.json
+PUB_IP=$(wget -qO- eth0.me);wget -qO- https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/Transformers/config.json|sed 's#\"ip\": \"pub_ip\"#\"ip\": '\"${PUB_IP}\"'#' > config.json
 ```
 
 Running Node 
 ```bash
 cd
 cd tfsc
-./tfs_v0.12.0_9120842_devnet -m
+./tfs_v0.20.1_7a9a151_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.12.0_9120842_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.20.1_7a9a151_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash

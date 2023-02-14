@@ -2,18 +2,21 @@
 * [Website](https://massa.net/)
 * [Github](https://github.com/massalabs/massa/)
 * [Discord](https://discord.gg/massa/)
-* [Testnet Explorer](https://massa.net/testnet/#wallet)
+* [Testnet Explorer](https://massexplo.io/stakers)
 
 ##  Hardware requirements：
 * CPU: Recommend for ubuntu 20.4 , core number 4 core and above.
 * Memory: 8 GB RAM
 * Disk: Recommend 200 GB Disk
 
-## Information testnet Massa 16
-The scoring will start at cycle 121, on Thursday, November 03 2022, 20:50 UTC
-The scoring will end at cycle 1197, on Tuesday, November 29 2022, 08:57 UTC
+## Upgrade MASSA 19.2 
+https://github.com/fatalbar/Testnet-validator/tree/main/massa/upgrade
 
-##  Installation massa 16 Automatic (Latest version) 31.10.2022
+## Detail testnet Massa 19.x
+* The scoring will start at cycle 158, on Monday, February 13 2023, 07:53 UTC
+* The scoring will end at cycle 703, on Sunday, February 26 2023, 05:55 UTC
+
+##  Installation massa 19.1 Automatic (Latest version) 02.02.2023
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
