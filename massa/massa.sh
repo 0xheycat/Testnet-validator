@@ -29,9 +29,7 @@ sleep 1
 
 # delete old folder
 rm -rf massa
-rm -rf massa-test.sh
-rm -rf massa-testnet.sh
-rm -rf massa_TEST.19.3_release_linux.tar.gz
+rm -rf massa.sh
 
 echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
 # update
@@ -49,8 +47,10 @@ sudo apt-get install librocksdb-dev build-essential
 echo -e "\e[1m\e[32m3. Downloading and building latest massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
-wget https://github.com/massalabs/massa/releases/download/TEST.20.0/massa_TEST.20.0_release_linux.tar.gz
-tar xvzf massa_TEST.20.0_release_linux.tar.gz
+massa_version=`wget -qO- https://api.github.com/repos/massalabs/massa/releases/latest | jq -r ".tag_name"`; \
+wget -qO $HOME/massa.tar.gz "https://github.com/massalabs/massa/releases/download/${massa_version}/massa_${massa_version}_release_linux.tar.gz"; \
+tar -xvf $HOME/massa.tar.gz; \
+rm -rf $HOME/massa.tar.gz
 
 # Update config
 cd $HOME
