@@ -19,7 +19,7 @@ https://github.com/fatalbar/Testnet-validator/tree/main/massa/upgrade
 IMPORTANT
 The entire database has been cleared, please add your address again.
 
-##  Installation massa 20.0 Automatic (Latest version)
+##  Installation massa 20.X Automatic (Latest version)
 ```bash
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/massa.sh && chmod +x massa.sh && ./massa.sh
 ```
