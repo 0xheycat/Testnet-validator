@@ -63,13 +63,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -c https://fastcdn.uscloudmedia.com/transformers/test/tfs_v0.20.1_7a9a151_devnet.tar.gz -O - | sudo tar -xz
-chmod +x tfs_v0.20.1_7a9a151_devnet
+wget -c fastcdn.uscloudmedia.com/transformers/test/tfs_v0.21.0_b011fcd_devnet
+chmod +x tfs_v0.21.0_b011fcd_devnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.20.1_7a9a151_devnet
+./tfs_v0.21.0_b011fcd_devnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -83,13 +83,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.20.1_7a9a151_devnet -m
+./tfs_v0.21.0_b011fcd_devnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.20.1_7a9a151_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.21.0_b011fcd_devnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
