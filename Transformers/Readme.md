@@ -37,12 +37,13 @@ sudo ufw allow 41516/tcp
 sudo ufw enable
 ```
 
-## Upgrade TTFSC to v0.20.1 updated 05/1/2023
-> Transformer 2nd phase for public LIVE:
+## Upgrade TTFSC to v0.33.1 updated 11/19/2023
+> Transformer Testnet phase for public LIVE:
 
-Update of v0.20.1
-✅Added block replenishment protocol to the validation synchronization process.
-✅Solved the deadlock problem when block pools broadcast transactions.
+Update of v0.33.1
+✅ Fix the problem that the return value of RPC interface is wrong.
+✅ Solve the problem that contract transactions can not be synchronized in some cases.
+✅ Increase RPC thread processing capacity to support more concurrent processing of requests.
 
 ## additional Instructions: 
 
@@ -63,13 +64,13 @@ mkdir tfsc
 Download New File
 ```bash
 cd tfsc
-wget -c fastcdn.uscloudmedia.com/transformers/test/tfs_v0.21.0_b011fcd_devnet
-chmod +x tfs_v0.21.0_b011fcd_devnet
+wget -q -O tmp.zip https://fastcdn.uscloudmedia.com/transformers/formal/tfs_v0.33.1_92c26db_testnet.zip && unzip tmp.zip && rm tmp.zip
+chmod +x tfs_v0.33.1_92c26db_testnet
 ```
 
 init config file, will generate new `config.json`
 ```bash
-./tfs_v0.21.0_b011fcd_devnet
+./tfs_v0.33.1_92c26db_testnet
 ```
 
 Setting your IP automatically to `config.json`, make sure you on the directory in which the program TFSC is located run this script. 
@@ -83,13 +84,13 @@ Running Node
 ```bash
 cd
 cd tfsc
-./tfs_v0.21.0_b011fcd_devnet -m
+./tfs_v0.33.1_92c26db_testnet -m
 ```
 Make your TFSC service on Background 
 ```bash
 cd
 cd tfsc
-screen -dmS tfsc bash -c './tfs_v0.21.0_b011fcd_devnet -m'
+screen -dmS tfsc bash -c './tfs_v0.33.1_92c26db_testnet -m'
 ```
 To back your screen, to close without terminating `CTRL+A+D`
 ```bash
