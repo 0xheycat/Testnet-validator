@@ -45,8 +45,8 @@ rm -rf massa_TEST.19.3_release_linux.tar.gz
 echo -e "\e[1m\e[32m2. upgrade latest massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
-wget https://github.com/massalabs/massa/releases/download/TEST.20.0/massa_TEST.20.0_release_linux.tar.gz
-tar xvzf massa_TEST.20.0_release_linux.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.27.0/massa_TEST.27.0_release_linux.tar.gz
+tar xvzf massa_TEST.27.0_release_linux.tar.gz
 
 echo -e "\e[1m\e[32m3. Restoring Wallet & setting config... \e[0m" && sleep 1
 #restoring wallet
