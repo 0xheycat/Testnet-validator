@@ -8,10 +8,10 @@ wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/ma
 wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/upgrade/massa193.sh && chmod +x massa.sh && ./massa.sh
 ```
 
-##  upgrade MASSA 20.0 status LIVE 🟢
+##  upgrade MASSA 27.0 status LIVE 🟢
 
 ```bash
-wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/upgrade/massa20.sh && chmod +x massa.sh && ./massa.sh
+wget -O massa.sh https://raw.githubusercontent.com/fatalbar/Testnet-validator/main/massa/upgrade/massa27.sh && chmod +x massa27.sh && ./massa27.sh
 ```
 * The scoring will start at cycle 202, on Monday, March 06 2023, 09:54 UTC
 * The scoring will end at cycle 1190, on Wednesday, March 29 2023, 19:58 UTC
