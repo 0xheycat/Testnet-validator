@@ -1,6 +1,7 @@
 
 ![masafi](https://user-images.githubusercontent.com/81378817/203053328-c1097323-d6b8-404b-86ef-3c2bcb7798a1.jpg)
 
+* Result reward masa finance https://github.com/fatalbar/Testnet-validator/blob/main/masa%20finance/Result.md
 
 ## Official Masa Finance
 * Web https://masa.finance/
