@@ -27,30 +27,31 @@ echo -e "Your Password : \e[1m\e[32m${PASSWORD}\e[0m"
 echo '================================================='
 sleep 1
 
+echo -e "\e[1m\e[32m1. backup wallet... \e[0m" && sleep 1
+
+# backup wallet
+mkdir massa_backup
+echo $HOME /massa/massa-node/config/node_privkey.key
+echo $HOME /massa/massa-client/wallet.dat
+cp $HOME/massa/massa-node/config/node_privkey.key $HOME/massa_backup/node_privkey.key
+cp $HOME/massa/massa-client/wallet.dat $HOME/massa_backup/wallet.dat
+
 # delete old folder
 rm -rf massa
 rm -rf massa.sh
+rm -rf massa-testnet.sh
+rm -rf massa_TEST.19.3_release_linux.tar.gz
 
-echo -e "\e[1m\e[32m1. Updating packages... \e[0m" && sleep 1
-# update
-sudo apt-get update
-sudo apt-get install clang
-sudo apt-get -y install librocksdb-dev
-sudo apt-get install screen
-
-echo -e "\e[1m\e[32m2. Installing dependencies... \e[0m" && sleep 1
-
-# install packages
-sudo apt install pkg-config curl git build-essential libssl-dev libclang-dev
-sudo apt-get install librocksdb-dev build-essential
-
-echo -e "\e[1m\e[32m3. Downloading and building latest massa binary... \e[0m" && sleep 1
+echo -e "\e[1m\e[32m2. upgrade latest massa binary... \e[0m" && sleep 1
 # downloading binary and extracting
 cd $HOME
-massa_version=`wget -qO- https://api.github.com/repos/massalabs/massa/releases/latest | jq -r ".tag_name"`; \
-wget -qO $HOME/massa.tar.gz "https://github.com/massalabs/massa/releases/download/${massa_version}/massa_${massa_version}_release_linux.tar.gz"; \
-tar -xvf $HOME/massa.tar.gz; \
-rm -rf $HOME/massa.tar.gz
+wget https://github.com/massalabs/massa/releases/download/TEST.27.0/massa_TEST.27.0_release_linux.tar.gz
+tar xvzf massa_TEST.27.0_release_linux.tar.gz
+
+echo -e "\e[1m\e[32m3. Restoring Wallet & setting config... \e[0m" && sleep 1
+#restoring wallet
+cp $HOME/massa_backup/node_privkey.key $HOME/massa/massa-node/config/
+cp $HOME/massa_backup/wallet.dat $HOME/massa/massa-client/
 
 # Update config
 cd $HOME
@@ -97,7 +98,6 @@ echo '================================================='
 
 chmod +x $HOME/massa/massa-client/massa-client
 cd $HOME/massa/massa-client && wallet_pss=$(./massa-client -p $PASSWORD | grep Address )
-cd $HOME/massa/massa-client && generate_address=$(./massa-client wallet_generate_secret_key - p $PASSWORD | grep Address | awk '{ print $2 }')
 
-echo '=============== INSTALL FINISHED ==================='
+echo '=============== UPDATE MASSA 20.0 FINISHED ==================='
 echo -e 'To check logs: \e[1m\e[32msudo tail -f /root/massa/massa-node/logs.txt\e[0m'
