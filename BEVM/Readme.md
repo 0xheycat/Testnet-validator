@@ -60,6 +60,7 @@ Configure Docker to start on system boot using the following command:
 sudo systemctl enable docker.service
 ```
 # Build BEVM 
+🌅 Update Wss configuration from new Phase `wss://telemetry-testnet.bevm.io/submit 1` 5 Feb 2024
 Make path and directory:
 ```bash
 cd /var/lib
@@ -74,7 +75,7 @@ sudo docker pull btclayer2/bevm:v0.1.1
 ### Running and copy Node Identity 
 * `metamask-address` with BEVM from Metamask example `0x0987383787843`
 ```bash
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0"
+sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry-testnet.bevm.io/submit 1"
 ```
 it will generate Tx Hash and Save it
 
@@ -109,7 +110,7 @@ please replace following
 * `YourIP`  ip address from your VPS
 
 ```bash
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry.bevm.io/submit 0" --bootnodes /ip4/YourIP/tcp/30333/ws/p2p/NodePublicKey
+sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.1 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry-testnet.bevm.io/submit 1" --bootnodes /ip4/YourIP/tcp/30333/ws/p2p/NodePublicKey
 ```
 It will generate a Tx hash, save it for furture use.
 
@@ -132,3 +133,5 @@ docker stop <container ID>
 
 do you want share coffee ?
 sure i also receiving coffe `0x5568d637aEfE29D939a724f64e0515B238353Bfb`
+
+If you have any issue with my configuration please make PR Thank you , 2024 Is Yours 
