@@ -7,8 +7,8 @@
 ![Screenshot_101](https://github.com/fatalbar/Testnet-validator/assets/81378817/34fd3b51-d5db-4ff5-83a5-a84b4eebd8a9)
 
 # Update
-🌅 Update wss configuration from new Phase `wss://telemetry-testnet.bevm.io/submit 1` 5 Feb 2024
-🌅 Build v0.1.2
+* 🌅 Update wss configuration from new Phase `wss://telemetry-testnet.bevm.io/submit 1` 5 Feb 2024
+* 🌅 Build v0.1.2
 
 # Install Docker and Dependencies
 install Docker, Docker Compose, and dependencies you can follow these steps:
@@ -65,6 +65,23 @@ sudo systemctl enable docker.service
 ```
 # Build BEVM 
 
+### Update latest version
+* Stop old service 
+```bash
+docker ps -a
+```
+find (find BTC 2 service)
+```bash
+docker kill `container id`
+```
+```bash
+docker rm `container id`
+```
+remove old dir container
+```bash
+sudo rm -rf /var/lib/node_bevm_test_storage
+```
+
 Make path and directory:
 ```bash
 cd /var/lib
@@ -73,31 +90,37 @@ mkdir node_bevm_test_storage
 
 ### Start Docker :
 ```bash
-sudo docker pull btclayer2/bevm:v0.1.2
+sudo docker pull btclayer2/bevm:testnet-v0.1.2
 ```
+![Screenshot_16](https://github.com/fatalbar/Testnet-validator/assets/81378817/930ff5d3-bbd7-41bd-b54a-14f210d6065b)
 
 ### Running and copy Node Identity 
-* `metamask-address` with BEVM from Metamask example `0x0987383787843`
+* `metamask-address` with Your Metamask Address example `0x0987383787843`
 ```bash
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.2 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry-testnet.bevm.io/submit 1"
+sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:testnet-v0.1.2 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry-testnet.bevm.io/submit 1"
 ```
+![Screenshot_18](https://github.com/fatalbar/Testnet-validator/assets/81378817/2cc60e54-3f2a-4d13-9a0a-d861b57af7e5)
+
 it will generate Tx Hash and Save it
 
 * check the logs 
 ```bash
-docker ps 
+docker ps -a
 ```
-![Screenshot_104](https://github.com/fatalbar/Testnet-validator/assets/81378817/ea2280f6-f5db-4d3f-8303-c25a5f080e6a)
+![Screenshot_19](https://github.com/fatalbar/Testnet-validator/assets/81378817/606109d4-657d-4b90-9b34-b3d72610515b)
+
 
 Replace `container id`
 ```bash
 docker logs -f <container ID>
 ```
 Do Quick, Scroll UP until you found `Local Up Identity` and save it, something like this
-![Screenshot_102](https://github.com/fatalbar/Testnet-validator/assets/81378817/a0edcd61-39ea-44f9-b5af-60affd3a5be3)
+![Screenshot_21](https://github.com/fatalbar/Testnet-validator/assets/81378817/ff22acd1-7e01-4398-b0d3-2f98145db413)
+
+
 
 Ok 
-### prepare P2p 
+### prepare P2p (OPTIONAL)
 
 * Open endpoints with firewall:
 ```bash
@@ -108,13 +131,13 @@ sudo iptables -A OUTPUT -p tcp --dport 30333 -j ACCEPT
 ### Run a docker container: 
 please replace following 
 * `metamask-address` with BEVM from Metamask example `0x0987383787843`
-* `NodePublicKey` with node identity from logs 
+* `NodePublicKey` with node identity from logs, 
   ![Screenshot_102](https://github.com/fatalbar/Testnet-validator/assets/81378817/a0edcd61-39ea-44f9-b5af-60affd3a5be3)
   
 * `YourIP`  ip address from your VPS
 
 ```bash
-sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:v0.1.2 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry-testnet.bevm.io/submit 1" --bootnodes /ip4/YourIP/tcp/30333/ws/p2p/NodePublicKey
+sudo docker run -d -v /var/lib/node_bevm_test_storage:/root/.local/share/bevm btclayer2/bevm:testnet-v0.1.2 bevm "--chain=testnet" "--name=metamask-address" "--pruning=archive" --telemetry-url "wss://telemetry-testnet.bevm.io/submit 1" --bootnodes /ip4/YourIP/tcp/30333/ws/p2p/NodePublicKey
 ```
 It will generate a Tx hash, save it for furture use.
 
@@ -123,7 +146,7 @@ It will generate a Tx hash, save it for furture use.
 ## Command 
 * Check the logs
 ```bash
-docker ps 
+docker ps -a
 ```
 then, replacing `container id` below:
 ```bash
